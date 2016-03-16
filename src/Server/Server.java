@@ -41,6 +41,7 @@ public class Server extends Thread {
                     String user = "root";
                     String password = "hejhej";
                     Statement st = null;
+                    Statement tt = null;
 
                     try {
                         tag = ois.readObject().toString();
@@ -57,13 +58,38 @@ public class Server extends Thread {
                             conn = DriverManager.getConnection(url, user, password);
                             st = conn.createStatement();
                             st.executeUpdate("INSERT INTO Users(Firstname, Lastname, Email, Password, Salary, Workplace) VALUES('"+firstname+"','"+ lastname+"','"+ email+"','"+ userPassword+"','"+ salary+"','"+ companyName+"' );");
+                            int userId = -1;
+                            ResultSet rs = null;
+                            rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+
+                            if (rs.next()) {
+                                userId = rs.getInt(1);
+                            }
+                            tt = conn.createStatement();
+                                tt.executeUpdate("INSERT INTO Workplace(Userid, Workplace, Salary) VALUES('"+userId+"','"+ companyName+"','"+ salary+"' );");
+                                int companyId = -1;
+                                ResultSet co = null;
+                                co = tt.executeQuery("SELECT LAST_INSERT_ID()");
+                                if (co.next()) {
+                                    companyId = co.getInt(1);
+                                    int[] args = new int[2];
+                                    args[0]=userId;
+                                    args[1]=companyId;
+                                    oos.writeObject(args);
+                                    System.out.println(userId);
+                                    System.out.println(companyId);
+                                }
+
+
+
+
 
                         }
                     } catch (SQLException ex) {
                             if(ex.getMessage().contains("Duplicate")){
-                                oos.writeObject("0");
+                                oos.writeObject("User Already Exists");
                             }if(ex.getMessage().contains("Data truncated for column 'Salary'")){
-                                oos.writeObject("1");
+                                oos.writeObject("Only Int");
                         }
                         System.out.println("SQLException: " + ex.getMessage());
                         System.out.println("SQLState: " + ex.getSQLState());
@@ -79,7 +105,7 @@ public class Server extends Thread {
 
 
     public static void main(String[] args) {
-        Server server = new Server(40001);
+        Server server = new Server(45001);
     }
 
 
