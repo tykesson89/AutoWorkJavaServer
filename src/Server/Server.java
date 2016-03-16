@@ -62,9 +62,9 @@ public class Server extends Thread {
                     } catch (SQLException ex) {
                             if(ex.getMessage().contains("Duplicate")){
                                 oos.writeObject("0");
-
-
-                            }
+                            }if(ex.getMessage().contains("Data truncated for column 'Salary'")){
+                                oos.writeObject("1");
+                        }
                         System.out.println("SQLException: " + ex.getMessage());
                         System.out.println("SQLState: " + ex.getSQLState());
                         System.out.println("VendorError: " + ex.getErrorCode());
