@@ -33,6 +33,7 @@ public class Server extends Thread {
                 String tag;
                 System.out.println("Waiting for client to connect!");
                 Socket socket = serversocket.accept();
+                System.out.println("Client Connected");
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
                     new HashMap<String, String>();
@@ -43,8 +44,10 @@ public class Server extends Thread {
 
                     try {
                         tag = ois.readObject().toString();
+                        System.out.println(tag);
                         if(tag.equals("Create User")) {
                             map = (HashMap) ois.readObject();
+                            System.out.println("Hashmap mottagen");
                             String firstname = map.get("Firstname");
                             String lastname = map.get("Lastname");
                             String email = map.get("Email");
@@ -57,7 +60,11 @@ public class Server extends Thread {
 
                         }
                     } catch (SQLException ex) {
+                            if(ex.getMessage().contains("Duplicate")){
+                                oos.writeObject("0");
 
+
+                            }
                         System.out.println("SQLException: " + ex.getMessage());
                         System.out.println("SQLState: " + ex.getSQLState());
                         System.out.println("VendorError: " + ex.getErrorCode());
