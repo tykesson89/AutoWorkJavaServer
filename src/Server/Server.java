@@ -1,5 +1,7 @@
 package Server;
 
+import UserPackage.User;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,11 +15,10 @@ import java.util.HashMap;
  * Created by Henrik on 2016-03-15.
  */
 public class Server extends Thread {
-    private HashMap<String, String> map;
     private Connection conn;
     private ServerSocket serversocket;
     private Thread thread = new Thread(this);
-
+    private User user;
     public Server(int port) {
         try {
             serversocket = new ServerSocket(port);
@@ -36,9 +37,8 @@ public class Server extends Thread {
                 System.out.println("Client Connected");
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-                    new HashMap<String, String>();
                     String url = "jdbc:mysql://localhost:3306/autowork";
-                    String user = "root";
+                    String username = "root";
                     String password = "hejhej";
                     Statement st = null;
                     Statement tt = null;
@@ -47,15 +47,15 @@ public class Server extends Thread {
                         tag = ois.readObject().toString();
                         System.out.println(tag);
                         if(tag.equals("Create User")) {
-                            map = (HashMap) ois.readObject();
-                            System.out.println("Hashmap mottagen");
-                            String firstname = map.get("Firstname");
-                            String lastname = map.get("Lastname");
-                            String email = map.get("Email");
-                            String userPassword = map.get("Password");
-                            String salary = map.get("HourlyWage");
-                            String companyName = map.get("CompanyName");
-                            conn = DriverManager.getConnection(url, user, password);
+                            user =(User) ois.readObject();
+                            String firstname = user.getFirstname();
+                            String lastname = user.getLastname();
+                            String email = user.getEmail();
+                            String userPassword = user.getPassword();
+                            double salary = user.getHourlyWage();
+                            String companyName = user.getCompanyName();
+
+                            conn = DriverManager.getConnection(url, username, password);
                             st = conn.createStatement();
                             st.executeUpdate("INSERT INTO Users(Firstname, Lastname, Email, Password, Salary, Workplace) VALUES('"+firstname+"','"+ lastname+"','"+ email+"','"+ userPassword+"','"+ salary+"','"+ companyName+"' );");
                             int userId = -1;
@@ -72,10 +72,8 @@ public class Server extends Thread {
                                 co = tt.executeQuery("SELECT LAST_INSERT_ID()");
                                 if (co.next()) {
                                     companyId = co.getInt(1);
-                                    int[] args = new int[2];
-                                    args[0]=userId;
-                                    args[1]=companyId;
-                                    oos.writeObject(args);
+                                    user = new User(firstname, lastname, email, null, companyName, salary, userId, companyId);
+                                    oos.writeObject(user);
                                     System.out.println(userId);
                                     System.out.println(companyId);
                                 }
