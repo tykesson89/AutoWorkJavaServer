@@ -6,6 +6,7 @@ import UserPackage.UserInterface;
  * Created by Henrik on 2016-03-17.
  */
 public class User implements UserInterface {
+    private static final long serialVersionUID = 1L;
     private String firstname;
     private String lastname;
     private String email;

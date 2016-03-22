@@ -35,18 +35,22 @@ public class Login extends Thread {
         System.out.println("tråden startar");
         try {
             user = (User) ois.readObject();
+            System.out.println("tar emot user");
             try {
                 String pass = user.getPassword();
                 String email = user.getEmail();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
                 ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + pass +"'");
-                int userID = rs.getInt(0);
-                String firstname = rs.getString(1);
-                String lastname = rs.getString(2);
-                email = rs.getString(3);
+               System.out.println("query skapad");
+                rs.first();
+                int userID = rs.getInt(1);
+                String firstname = rs.getString(2);
+                String lastname = rs.getString(3);
+                email = rs.getString(4);
                 User user = new User(userID, firstname, lastname, email);
                 oos.writeObject(user);
+                System.out.print("user skickad");
             } catch (SQLException ex) {
                 oos.writeObject(ex.getMessage());
 
@@ -56,7 +60,7 @@ public class Login extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getLocalizedMessage());
         }
     }
 
