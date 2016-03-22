@@ -38,12 +38,23 @@ public class User implements UserInterface {
 
     }
 
-    public User(String email, String password, int userId){
+    public User(String email, String password){
         this.email = email;
         this.password = password;
-        this.userId = userId;
+        this.userId = 0;
         this.firstname = null;
         this.lastname = null;
+        this.companyName = null;
+        this.hourlyWage = 0;
+        this.companyId = 0;
+    }
+
+    public User(int userID, String firstname, String lastname, String email) {
+        this.userId = userID;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = null;
         this.companyName = null;
         this.hourlyWage = 0;
         this.companyId = 0;

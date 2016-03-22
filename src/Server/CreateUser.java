@@ -1,7 +1,6 @@
 package Server;
 
 import UserPackage.User;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -19,10 +18,12 @@ public class CreateUser extends Thread {
     private Connection conn;
     private User user;
 
-    public CreateUser(Socket socket, User user)
+    public CreateUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
-    this.user = user;
+        this.ois = ois;
+        this.oos = oos;
+        start();
 
 
     }
@@ -37,9 +38,7 @@ public class CreateUser extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            System.out.println("tråden startar");
-            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-            System.out.println("Tagit emot user");
+            user = (User) ois.readObject();
             try {
                 String firstname = user.getFirstname();
                 String lastname = user.getLastname();
