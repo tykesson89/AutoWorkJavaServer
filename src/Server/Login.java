@@ -48,7 +48,7 @@ public class Login extends Thread {
                 String firstname = rs.getString(2);
                 String lastname = rs.getString(3);
                 email = rs.getString(4);
-                User user = new User(userID, firstname, lastname, email);
+                User user = new User(firstname, lastname, email, userID);
                 oos.writeObject(user);
                 System.out.print("user skickad");
             } catch (SQLException ex) {

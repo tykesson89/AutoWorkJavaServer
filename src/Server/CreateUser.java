@@ -1,5 +1,6 @@
 package Server;
 
+import UserPackage.Company;
 import UserPackage.User;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -17,6 +18,7 @@ public class CreateUser extends Thread {
     private ObjectOutputStream oos;
     private Connection conn;
     private User user;
+    private Company company;
 
     public CreateUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
@@ -39,18 +41,19 @@ public class CreateUser extends Thread {
         System.out.println("tråden startar");
         try {
             user = (User) ois.readObject();
+            company = (Company)ois.readObject();
             try {
                 String firstname = user.getFirstname();
                 String lastname = user.getLastname();
                 String email = user.getEmail();
                 String userPassword = user.getPassword();
-                double salary = user.getHourlyWage();
-                String companyName = user.getCompanyName();
+                double salary = company.getHourlyWage();
+                String companyName = company.getCompanyName();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeUpdate("INSERT INTO Users(Firstname, Lastname, Email, Password, Salary, Workplace) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + userPassword + "','" + salary + "','" + companyName + "' );");
+                st.executeUpdate("INSERT INTO Users(Firstname, Lastname, Email, Password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + userPassword + "' );");
                 int userId = -1;
                 ResultSet rs = null;
                 rs = st.executeQuery("SELECT LAST_INSERT_ID()");
@@ -65,8 +68,7 @@ public class CreateUser extends Thread {
                 co = tt.executeQuery("SELECT LAST_INSERT_ID()");
                 if (co.next()) {
                     companyId = co.getInt(1);
-                    user = new User(firstname, lastname, email, null, companyName, salary, userId, companyId);
-
+                    user = new User(firstname, lastname, email, null, userId);
                 }
                 oos.writeObject(user);
                 System.out.println(userId);

@@ -40,7 +40,15 @@ public class Server extends Thread {
                    new CreateUser(socket, oos, ois);
                 }else if(tag.equals("Login")){
                     new Login(socket, ois, oos);
-                }else if(tag.equals("Change info")){
+                }else if(tag.equals("Change Info")){
+
+                }else if(tag.equals("Change Company Info")){
+
+                }else if(tag.equals("Create Company")){
+
+                }else if(tag.equals("Delete Company")){
+
+                }else if(tag.equals("Delete User")){
 
                 }
             }
