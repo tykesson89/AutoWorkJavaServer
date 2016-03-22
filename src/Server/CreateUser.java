@@ -47,13 +47,13 @@ public class CreateUser extends Thread {
                 String lastname = user.getLastname();
                 String email = user.getEmail();
                 String userPassword = user.getPassword();
-                double salary = company.getHourlyWage();
+                double houelywage = company.getHourlyWage();
                 String companyName = company.getCompanyName();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeUpdate("INSERT INTO Users(Firstname, Lastname, Email, Password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + userPassword + "' );");
+                st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + userPassword + "' );");
                 int userId = -1;
                 ResultSet rs = null;
                 rs = st.executeQuery("SELECT LAST_INSERT_ID()");
@@ -62,7 +62,7 @@ public class CreateUser extends Thread {
                     userId = rs.getInt(1);
                 }
                 tt = conn.createStatement();
-                tt.executeUpdate("INSERT INTO Workplace(Userid, Workplace, Salary) VALUES('" + userId + "','" + companyName + "','" + salary + "' );");
+                tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
                 int companyId = -1;
                 ResultSet co = null;
                 co = tt.executeQuery("SELECT LAST_INSERT_ID()");

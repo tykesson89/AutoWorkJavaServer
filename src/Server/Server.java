@@ -43,7 +43,7 @@ public class Server extends Thread {
                 }else if(tag.equals("Change Info")){
                     new ChangeUserInfo(socket, oos, ois);
                 }else if(tag.equals("Change Company Info")){
-
+                    new ChangeCompanyInfo(socket, oos, ois);
                 }else if(tag.equals("Create Company")){
 
                 }else if(tag.equals("Delete Company")){
