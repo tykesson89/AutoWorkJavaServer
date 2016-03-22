@@ -66,12 +66,12 @@ public class CreateUser extends Thread {
                 if (co.next()) {
                     companyId = co.getInt(1);
                     user = new User(firstname, lastname, email, null, companyName, salary, userId, companyId);
-                    oos.writeUTF("Hej");
-                    oos.writeObject(user);
-                    System.out.println(userId);
-                    System.out.println(companyId);
-                    System.out.println(user.toString());
+
                 }
+                oos.writeObject(user);
+                System.out.println(userId);
+                System.out.println(companyId);
+                System.out.println(user.toString());
 
 
             } catch (SQLException ex) {
