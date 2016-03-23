@@ -13,8 +13,10 @@ public interface UserInterface extends Serializable {
     public void setLastname(String lastname);
     public String getEmail();
     public void setEmail(String email);
-    public String getPassword();
-    public void setPassword(String password);
+    public String getOldPassword();
+    public void setOldPassword(String password);
+    public String getNewPassword();
+    public void setNewPassword(String newPassword);
     public int getUserid();
     public void setUserid(int userid);
     public String toString();

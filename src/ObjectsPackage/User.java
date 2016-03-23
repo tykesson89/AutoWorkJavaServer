@@ -1,5 +1,7 @@
 package ObjectsPackage;
 
+
+
 /**
  * Created by Henrik on 2016-03-17.
  */
@@ -8,34 +10,57 @@ public class User implements UserInterface {
     private String firstname;
     private String lastname;
     private String email;
-    private String password;
+    private String newPassword;
+    private String oldPassword;
     private int userId;
 
 
-    public User(String firstname, String lastname, String email, String password, int userId){
+    public User(String firstname, String lastname, String email, String oldPassword, int userId, String newPassword){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
+        this.oldPassword = oldPassword;
         this.userId = userId;
+        this.newPassword = newPassword;
 
     }
 
-    public User(String email, String password){
+
+    public User(String firstname, String lastname, String email, String oldPassword, int userId){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.oldPassword = oldPassword;
+        this.userId = userId;
+        this.newPassword = null;
+
+    }
+
+    public User(String email, String oldPassword){
         this.firstname = null;
         this.lastname = null;
         this.email = email;
-        this.password = password;
+        this.oldPassword = oldPassword;
         this.userId = -1;
-
+        this.newPassword = null;
     }
     public User(String firstname, String lastname, String email, int userId){
-        this.firstname = null;
-        this.lastname = null;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
-        this.password = null;
+        this.oldPassword = null;
         this.userId = userId;
+        this.newPassword = null;
     }
+    public User(String firstname, String lastname, String email, String oldPassword){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.oldPassword = oldPassword;
+        this.userId = -1;
+        this.newPassword = null;
+    }
+
 
 
 
@@ -71,13 +96,23 @@ public class User implements UserInterface {
     }
 
     @Override
-    public String getPassword() {
-        return password;
+    public String getNewPassword() {
+        return null;
     }
 
     @Override
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNewPassword(String newPassword) {
+
+    }
+
+    @Override
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    @Override
+    public void setOldPassword(String password) {
+        this.oldPassword = oldPassword;
     }
 
 
@@ -97,12 +132,12 @@ public class User implements UserInterface {
         arr[0] = firstname;
         arr[1] = lastname;
         arr[2] = email;
-        arr[3] = password;
+        arr[3] = oldPassword;
         arr[4] = userId;
         return arr;
     }
     public String toString(){
-        String str = firstname + ", " + lastname + ", " + email + ", " + password + ", " + userId;
+        String str = firstname + ", " + lastname + ", " + email + ", " + oldPassword + ", " + userId;
         return str;
     }
 }
