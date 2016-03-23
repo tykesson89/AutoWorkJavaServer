@@ -1,6 +1,6 @@
-package Server;
+package Operations;
 
-import UserPackage.User;
+import ObjectsPackage.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,22 +9,27 @@ import java.net.Socket;
 import java.sql.*;
 
 /**
- * Created by Henrik on 2016-03-21.
+ * Created by Henrik on 2016-03-22.
  */
-public class Login extends Thread {
+public class ChangeUserInfo extends Thread {
+
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
     private User user;
 
-    public Login(Socket socket, ObjectInputStream ois, ObjectOutputStream oos)
+
+    public ChangeUserInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
         this.oos = oos;
         start();
+
+
     }
+
     public void run() {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
@@ -35,24 +40,26 @@ public class Login extends Thread {
         System.out.println("tråden startar");
         try {
             user = (User) ois.readObject();
-            System.out.println("tar emot user");
             try {
-                String pass = user.getPassword();
+                String firstname = user.getFirstname();
+                String lastname = user.getLastname();
                 String email = user.getEmail();
+                String userPassword = user.getPassword();
+                int userId = user.getUserid();
+
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + pass +"'");
-               System.out.println("query skapad");
-                rs.first();
-                int userID = rs.getInt(1);
-                String firstname = rs.getString(2);
-                String lastname = rs.getString(3);
-                email = rs.getString(4);
-                User user = new User(firstname, lastname, email, userID);
+
+                st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + password + "' where userid = " + userId + ";");
+
+
+                user = new User(firstname, lastname, email, null, userId);
+
                 oos.writeObject(user);
-                System.out.print("user skickad");
+
+
             } catch (SQLException ex) {
-                oos.writeObject(ex.getMessage());
+                oos.writeObject("Something went wrong");
 
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
@@ -60,8 +67,20 @@ public class Login extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getStackTrace());
         }
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+

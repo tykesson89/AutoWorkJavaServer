@@ -1,4 +1,4 @@
-package UserPackage;
+package ObjectsPackage;
 
 /**
  * Created by Henrik on 2016-03-22.

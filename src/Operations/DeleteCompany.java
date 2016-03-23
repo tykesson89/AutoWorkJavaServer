@@ -1,7 +1,6 @@
-package Server;
+package Operations;
 
-import UserPackage.Company;
-import UserPackage.User;
+import ObjectsPackage.Company;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -15,15 +14,15 @@ import java.sql.Statement;
 /**
  * Created by Henrik on 2016-03-22.
  */
-public class DeleteUser extends Thread {
+public class DeleteCompany extends Thread {
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private User user;
+    private Company company;
 
 
-    public DeleteUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public DeleteCompany(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
@@ -42,19 +41,19 @@ public class DeleteUser extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            user = (User) ois.readObject();
+            company = (Company) ois.readObject();
             try {
-                int userId = user.getUserid();
+                int companyId = company.getCompanyId();
+
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeQuery("DELETE FROM company where userid = '" + userId + "';");
-                st.executeQuery("DELETE FROM users where userid = '" + userId + "';");
+                st.executeQuery("DELETE FROM company where companyid = '" + companyId + "';");
 
 
 
 
-                oos.writeObject("User deleted");
+                oos.writeObject("Company deleted");
 
 
             } catch (SQLException ex) {

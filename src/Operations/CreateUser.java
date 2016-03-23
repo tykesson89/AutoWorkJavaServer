@@ -1,7 +1,7 @@
-package Server;
+package Operations;
 
-import UserPackage.Company;
-import UserPackage.User;
+import ObjectsPackage.Company;
+import ObjectsPackage.User;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

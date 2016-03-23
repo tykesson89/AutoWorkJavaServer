@@ -1,27 +1,28 @@
-package Server;
+package Operations;
 
-import UserPackage.Company;
-import UserPackage.User;
+import ObjectsPackage.Company;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by Henrik on 2016-03-22.
  */
-public class ChangeUserInfo extends Thread {
-
+public class ChangeCompanyInfo extends Thread {
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private User user;
+    private Company company;
 
 
-    public ChangeUserInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
@@ -40,23 +41,21 @@ public class ChangeUserInfo extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            user = (User) ois.readObject();
+            company = (Company) ois.readObject();
             try {
-                String firstname = user.getFirstname();
-                String lastname = user.getLastname();
-                String email = user.getEmail();
-                String userPassword = user.getPassword();
-                int userId = user.getUserid();
+                String companyName = company.getCompanyName();
+                double hourlyWage = company.getHourlyWage();
+                int companyId = company.getCompanyId();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + password + "' where userid = " + userId + ";");
+                st.executeUpdate("update company set companyname = '" + companyName + "', hourlywage = '" + hourlyWage + "' where companyid = " + companyId + ";");
 
 
-                user = new User(firstname, lastname, email, null, userId);
 
-                oos.writeObject(user);
+
+                oos.writeObject(company);
 
 
             } catch (SQLException ex) {
@@ -74,14 +73,3 @@ public class ChangeUserInfo extends Thread {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-

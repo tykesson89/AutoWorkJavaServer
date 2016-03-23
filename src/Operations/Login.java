@@ -1,38 +1,30 @@
-package Server;
+package Operations;
 
-import UserPackage.Company;
-import UserPackage.User;
+import ObjectsPackage.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
- * Created by Henrik on 2016-03-22.
+ * Created by Henrik on 2016-03-21.
  */
-public class ChangeCompanyInfo extends Thread {
+public class Login extends Thread {
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private Company company;
+    private User user;
 
-
-    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public Login(Socket socket, ObjectInputStream ois, ObjectOutputStream oos)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
         this.oos = oos;
         start();
-
-
     }
-
     public void run() {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
@@ -42,25 +34,25 @@ public class ChangeCompanyInfo extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            company = (Company) ois.readObject();
+            user = (User) ois.readObject();
+            System.out.println("tar emot user");
             try {
-                String companyName = company.getCompanyName();
-                double hourlyWage = company.getHourlyWage();
-                int companyId = company.getCompanyId();
-
+                String pass = user.getPassword();
+                String email = user.getEmail();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-
-                st.executeUpdate("update company set companyname = '" + companyName + "', hourlywage = '" + hourlyWage + "' where companyid = " + companyId + ";");
-
-
-
-
-                oos.writeObject(company);
-
-
+                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + pass +"'");
+               System.out.println("query skapad");
+                rs.first();
+                int userID = rs.getInt(1);
+                String firstname = rs.getString(2);
+                String lastname = rs.getString(3);
+                email = rs.getString(4);
+                User user = new User(firstname, lastname, email, userID);
+                oos.writeObject(user);
+                System.out.print("user skickad");
             } catch (SQLException ex) {
-                oos.writeObject("Something went wrong");
+                oos.writeObject(ex.getMessage());
 
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
@@ -68,9 +60,8 @@ public class ChangeCompanyInfo extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getLocalizedMessage());
         }
     }
-
 
 }

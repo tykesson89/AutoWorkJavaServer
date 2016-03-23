@@ -1,25 +1,28 @@
-package Server;
+package Operations;
 
-import UserPackage.Company;
-import UserPackage.User;
+import ObjectsPackage.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by Henrik on 2016-03-22.
  */
-public class CreateCompany extends Thread {
+public class DeleteUser extends Thread {
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private Company company;
+    private User user;
 
-    public CreateCompany(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+
+    public DeleteUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
@@ -28,7 +31,6 @@ public class CreateCompany extends Thread {
 
 
     }
-
 
     public void run() {
         System.out.println("tråden startar");
@@ -39,28 +41,24 @@ public class CreateCompany extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            company = (Company)ois.readObject();
+            user = (User) ois.readObject();
             try {
-                double houelywage = company.getHourlyWage();
-                String companyName = company.getCompanyName();
-                int userId = company.getUserId();
+                int userId = user.getUserid();
                 conn = DriverManager.getConnection(url, username, password);
+                st = conn.createStatement();
 
-                tt = conn.createStatement();
-                tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
-                int companyId = -1;
-                ResultSet co = null;
-                co = tt.executeQuery("SELECT LAST_INSERT_ID()");
-                if (co.next()) {
-                    companyId = co.getInt(1);
-                    company = new Company(companyName, houelywage, userId, companyId);
-                }
-                oos.writeObject(company);
+                st.executeQuery("DELETE FROM company where userid = '" + userId + "';");
+                st.executeQuery("DELETE FROM users where userid = '" + userId + "';");
 
+
+
+
+                oos.writeObject("User deleted");
 
 
             } catch (SQLException ex) {
-               oos.writeObject("Something went wrong");
+                oos.writeObject("Something went wrong");
+
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
                 System.out.println("VendorError: " + ex.getErrorCode());

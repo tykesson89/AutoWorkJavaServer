@@ -1,4 +1,4 @@
-package UserPackage;
+package ObjectsPackage;
 
 import java.io.Serializable;
 

@@ -1,6 +1,4 @@
-package UserPackage;
-
-import UserPackage.UserInterface;
+package ObjectsPackage;
 
 /**
  * Created by Henrik on 2016-03-17.
