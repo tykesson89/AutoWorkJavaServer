@@ -37,11 +37,11 @@ public class Login extends Thread {
             user = (User) ois.readObject();
             System.out.println("tar emot user");
             try {
-                String pass = user.getPassword();
+                String oldPassword = user.getOldPassword();
                 String email = user.getEmail();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + pass +"'");
+                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + oldPassword +"'");
                System.out.println("query skapad");
                 rs.first();
                 int userID = rs.getInt(1);

@@ -44,13 +44,14 @@ public class ChangeUserInfo extends Thread {
                 String firstname = user.getFirstname();
                 String lastname = user.getLastname();
                 String email = user.getEmail();
-                String userPassword = user.getPassword();
+                String oldPassword = user.getOldPassword();
+                String newPassword = user.getNewPassword();
                 int userId = user.getUserid();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + password + "' where userid = " + userId + ";");
+                st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + newPassword + "' where userid = " + userId + "and password = '" + oldPassword + "';");
 
 
                 user = new User(firstname, lastname, email, null, userId);

@@ -46,14 +46,14 @@ public class CreateUser extends Thread {
                 String firstname = user.getFirstname();
                 String lastname = user.getLastname();
                 String email = user.getEmail();
-                String userPassword = user.getPassword();
+                String oldPassword = user.getOldPassword();
                 double houelywage = company.getHourlyWage();
                 String companyName = company.getCompanyName();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + userPassword + "' );");
+                st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + oldPassword + "' );");
                 int userId = -1;
                 ResultSet rs = null;
                 rs = st.executeQuery("SELECT LAST_INSERT_ID()");
