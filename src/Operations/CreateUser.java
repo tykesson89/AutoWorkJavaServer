@@ -1,7 +1,7 @@
 package Operations;
 
-import ObjectsPackage.Company;
-import ObjectsPackage.User;
+import UserPackage.Company;
+import UserPackage.User;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -63,17 +63,7 @@ public class CreateUser extends Thread {
                 }
                 tt = conn.createStatement();
                 tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
-                int companyId = -1;
-                ResultSet co = null;
-                co = tt.executeQuery("SELECT LAST_INSERT_ID()");
-                if (co.next()) {
-                    companyId = co.getInt(1);
-                    user = new User(firstname, lastname, email, null, userId);
-                }
-                oos.writeObject(user);
-                System.out.println(userId);
-                System.out.println(companyId);
-                System.out.println(user.toString());
+
 
 
             } catch (SQLException ex) {
@@ -89,7 +79,8 @@ public class CreateUser extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getMessage());
         }
     }
 

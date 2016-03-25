@@ -1,6 +1,6 @@
 package Operations;
 
-import ObjectsPackage.Company;
+import UserPackage.Company;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
