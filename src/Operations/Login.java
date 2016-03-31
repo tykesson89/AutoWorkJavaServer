@@ -1,5 +1,6 @@
 package Operations;
 
+import UserPackage.Company;
 import UserPackage.User;
 
 import java.io.IOException;
@@ -7,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Created by Henrik on 2016-03-21.
@@ -50,7 +52,18 @@ public class Login extends Thread {
                 email = rs.getString(4);
                 User user = new User(firstname, lastname, email, userID);
                 oos.writeObject(user);
-                System.out.print("user skickad");
+                ArrayList<Company>list = new ArrayList<Company>();
+                rs = st.executeQuery("SELECT companyid, companyname, hourlywage FROM company WHERE userid = "+userID);
+                while(rs.next()){
+                    int id = rs.getInt(1);
+                    String companyname = rs.getString(2);
+                    double hourlyWage = rs.getDouble(3);
+                    Company company = new Company(companyname, hourlyWage, id, userID);
+                    list.add(company);
+                }
+                oos.writeObject(list);
+
+
             } catch (SQLException ex) {
                 oos.writeObject(ex.getMessage());
 
