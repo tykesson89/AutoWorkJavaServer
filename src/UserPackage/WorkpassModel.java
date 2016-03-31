@@ -1,6 +1,7 @@
 package UserPackage;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import UserPackage.Company;
@@ -13,18 +14,33 @@ public class WorkpassModel implements Serializable{
     private long id;
     private int userID;
     private String title;
+    private double salary;
     private Company company;
-    private Date startDateTime;
-    private Date endDateTime;
-    private int braketime;
+    private Timestamp startDateTime;
+    private Timestamp endDateTime;
+    private int breaktime;
     private String note;
 
-    public WorkpassModel(String title, Date startDateTime,
-                         Date endDateTime, int braketime, String note) {
+    public WorkpassModel(String title, double salary, Company company, Timestamp startDateTime,
+                         Timestamp endDateTime, int breaktime, String note) {
         this.title = title;
+        this.salary = salary;
+        this.company = company;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
-        this.braketime = braketime;
+        this.breaktime = breaktime;
+        this.note = note;
+    }
+    public WorkpassModel(long id, int userID, String title, double salary, Company company, Timestamp startDateTime,
+                         Timestamp endDateTime, int breaktime, String note){
+        this.id = id;
+        this.userID = userID;
+        this.title = title;
+        this.salary = salary;
+        this.company = company;
+        this.startDateTime = startDateTime;
+        this.endDateTime = endDateTime;
+        this.breaktime = breaktime;
         this.note = note;
     }
 
@@ -40,23 +56,31 @@ public class WorkpassModel implements Serializable{
         return company;
     }
 
-    public void setStartDateTime(Date startDateTime){
+    public void setStartDateTime(Timestamp startDateTime){
         this.startDateTime = startDateTime;
     }
 
-    public Date getStartDateTime() {
+    public Timestamp getStartDateTime() {
         return startDateTime;
     }
 
-    public void setEndDateTime(Date endDateTime) {
+    public void setEndDateTime(Timestamp endDateTime) {
         this.endDateTime = endDateTime;
     }
 
-    public Date getEndDateTime() {
+    public Timestamp getEndDateTime() {
         return endDateTime;
     }
 
-    public int getUserId() {
+    public void setSalary(double salary){
+        this.salary = salary;
+    }
+
+    public double getSalary(){
+        return salary;
+    }
+
+    public long getUserId() {
         return userID;
     }
 
@@ -80,12 +104,12 @@ public class WorkpassModel implements Serializable{
         this.title = title;
     }
 
-    public int getBraketime() {
-        return braketime;
+    public int getBreaktime() {
+        return breaktime;
     }
 
-    public void setBraketime(int braketime) {
-        this.braketime = braketime;
+    public void setBreaktime(int breaktime) {
+        this.breaktime = breaktime;
     }
 
     public String getNote() {

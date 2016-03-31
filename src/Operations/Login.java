@@ -2,6 +2,7 @@ package Operations;
 
 import UserPackage.Company;
 import UserPackage.User;
+import UserPackage.WorkpassModel;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -43,7 +44,7 @@ public class Login extends Thread {
                 String email = user.getEmail();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + oldPassword +"'");
+                ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + oldPassword +"';");
                System.out.println("query skapad");
                 rs.first();
                 int userID = rs.getInt(1);
@@ -53,7 +54,8 @@ public class Login extends Thread {
                 User user = new User(firstname, lastname, email, userID);
                 oos.writeObject(user);
                 ArrayList<Company>list = new ArrayList<Company>();
-                rs = st.executeQuery("SELECT companyid, companyname, hourlywage FROM company WHERE userid = "+userID);
+                ArrayList<WorkpassModel>workpassList = new ArrayList<WorkpassModel>();
+                rs = st.executeQuery("SELECT companyid, companyname, hourlywage FROM company WHERE userid = "+userID+";");
                 while(rs.next()){
                     int id = rs.getInt(1);
                     String companyname = rs.getString(2);
@@ -62,7 +64,23 @@ public class Login extends Thread {
                     list.add(company);
                 }
                 oos.writeObject(list);
-
+                rs = st.executeQuery("SELECT workpassid, title, companyname, hourlywage, starttime, endtime, salary, breaktime, notes FROM workpass WHERE userid ="+userID+";");
+                while(rs.next()){
+                    long companyid = rs.getLong("workpassid");
+                    String title = rs.getString("title");
+                    String companyname = rs.getString("companyname");
+                    double hourlyWage = rs.getDouble("hourlywage");
+                    Timestamp starttime = rs.getTimestamp("starttime");
+                    Timestamp endtime = rs.getTimestamp("endtime");
+                    double salary = rs.getDouble("salary");
+                    int breaktime = rs.getInt("breaktime");
+                    String notes = rs.getString("notes");
+                    Company company = new Company(companyname, hourlyWage);
+                    WorkpassModel workpassModel = new WorkpassModel(companyid, userID, title, salary, company, starttime,
+                            endtime, breaktime, notes);
+                    workpassList.add(workpassModel);
+                }
+                oos.writeObject(workpassList);
 
             } catch (SQLException ex) {
                 oos.writeObject(ex.getMessage());
