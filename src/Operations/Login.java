@@ -1,5 +1,7 @@
 package Operations;
 
+
+
 import UserPackage.Company;
 import UserPackage.User;
 import UserPackage.WorkpassModel;
@@ -57,10 +59,10 @@ public class Login extends Thread {
                 ArrayList<WorkpassModel>workpassList = new ArrayList<WorkpassModel>();
                 rs = st.executeQuery("SELECT companyid, companyname, hourlywage FROM company WHERE userid = "+userID+";");
                 while(rs.next()){
-                    int id = rs.getInt(1);
-                    String companyname = rs.getString(2);
-                    double hourlyWage = rs.getDouble(3);
-                    Company company = new Company(companyname, hourlyWage, id, userID);
+                    int id = rs.getInt("companyid");
+                    String companyname = rs.getString("companyname");
+                    double hourlyWage = rs.getDouble("hourlywage");
+                    Company company = new Company(companyname, hourlyWage, userID, id);
                     list.add(company);
                 }
                 oos.writeObject(list);
