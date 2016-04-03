@@ -50,17 +50,27 @@
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+              <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteUser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChangeUserInfo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8573913">
+              <caret line="59" column="142" selection-start-line="59" selection-start-column="142" selection-end-line="59" selection-end-column="142" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/DeleteUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26086956">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -131,15 +141,15 @@
         <option value="$PROJECT_DIR$/src/Operations/Server.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerGUI.java" />
         <option value="$PROJECT_DIR$/src/ObjectsPackage/User.java" />
-        <option value="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassInterface.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassModel (3).java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassModel.java" />
         <option value="$PROJECT_DIR$/src/Operations/Login.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateUser.java" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Operations/DeleteUser.java" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
+        <option value="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
       </list>
     </option>
   </component>
@@ -759,7 +769,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32474804" sideWeight="0.27615964" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.117359415" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15647922" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -797,7 +807,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java</url>
+          <line>50</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -877,8 +896,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -903,8 +922,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -929,8 +948,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -955,8 +974,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -973,8 +992,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -991,8 +1010,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,8 +1028,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1027,8 +1046,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1045,8 +1064,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1063,8 +1082,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1081,8 +1100,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1099,8 +1118,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1110,8 +1129,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="98" selection-start-line="43" selection-start-column="98" selection-end-line="43" selection-end-column="98" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1121,8 +1140,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="98" selection-start-line="43" selection-start-column="98" selection-end-line="43" selection-end-column="98" />
           <folding>
-            <element signature="e#2017#2018#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1171,16 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="82" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserPackage/Company.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1197,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/CreateUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1213,18 +1214,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Operations/DeleteUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/DeleteUser.java">
+    <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26086956">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8573913">
+          <caret line="59" column="142" selection-start-line="59" selection-start-column="142" selection-end-line="59" selection-end-column="142" />
           <folding />
         </state>
       </provider>

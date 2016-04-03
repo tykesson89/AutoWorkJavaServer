@@ -34,7 +34,7 @@ public class ChangeUserInfo extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej";
+        String password = "hejhej89";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -47,13 +47,22 @@ public class ChangeUserInfo extends Thread {
                 String oldPassword = user.getOldPassword();
                 String newPassword = user.getNewPassword();
                 int userId = user.getUserid();
-
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-
-                st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + newPassword + "' where userid = " + userId + "and password = '" + oldPassword + "';");
-
-
+              ResultSet rs =  st.executeQuery("SELECT password FROM users WHERE userid ="+userId);
+                rs.first();
+                String pass = rs.getString("Password");
+                System.out.println(pass);
+                System.out.println(oldPassword);
+                if(!pass.equals(oldPassword)){
+                    oos.writeObject("Password is incorrect");
+                }else if(newPassword == null){
+                    st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "' where userid = " + userId + ";");
+                    oos.writeObject("Success");
+                }else {
+                    st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + newPassword + "' where userid = " + userId + ";");
+                    oos.writeObject("Success");
+                }
                 user = new User(firstname, lastname, email, null, userId);
 
                 oos.writeObject(user);

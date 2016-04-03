@@ -33,7 +33,7 @@ public class DeleteUser extends Thread {
     }
 
     public void run() {
-        
+
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
