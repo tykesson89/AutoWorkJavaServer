@@ -33,10 +33,11 @@ public class DeleteUser extends Thread {
     }
 
     public void run() {
+        
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej";
+        String password = "hejhej89";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -47,8 +48,8 @@ public class DeleteUser extends Thread {
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeQuery("DELETE FROM company where userid = '" + userId + "';");
-                st.executeQuery("DELETE FROM users where userid = '" + userId + "';");
+                st.executeUpdate("DELETE FROM company where userid = '" + userId + "';");
+                st.executeUpdate("DELETE FROM users where userid = '" + userId + "';");
 
 
 
@@ -57,6 +58,7 @@ public class DeleteUser extends Thread {
 
 
             } catch (SQLException ex) {
+
                 oos.writeObject("Something went wrong");
 
                 System.out.println("SQLException: " + ex.getMessage());
@@ -65,7 +67,7 @@ public class DeleteUser extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getLocalizedMessage());
         }
     }
 }
