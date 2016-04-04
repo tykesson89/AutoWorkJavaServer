@@ -97,12 +97,12 @@ public class User implements UserInterface {
 
     @Override
     public String getNewPassword() {
-        return null;
+        return newPassword;
     }
 
     @Override
     public void setNewPassword(String newPassword) {
-
+this.newPassword = newPassword;
     }
 
     @Override
