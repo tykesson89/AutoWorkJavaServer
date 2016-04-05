@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/activation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/additionnal.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mail.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/SendMail.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/UserPackage/BufferModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoWorkJavaServer.iml" afterPath="$PROJECT_DIR$/AutoWorkJavaServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Server/Server.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,12 +73,12 @@
       <file leaf-file-name="GetNewPassword.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Operations/GetNewPassword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23130435">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.44347826">
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2593#2594#0" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
+                <element signature="e#2577#2578#0" expanded="true" />
+                <element signature="e#2604#2605#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -322,13 +317,14 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henrik\Documents\GitHub\AutoworkJavaServer\AutoWorkJavaServer\src\UserPackage" />
+      <recent name="C:\Users\Henrik\Documents\GitHub\AutoWorkJavaServer\AutoWorkJavaServer\src\UserPackage" />
+      <recent name="C:\Users\Henrik\Documents\GitHub\AutoWorkJavaServer\AutoWorkJavaServer\src\ObjectsPackage" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Henrik\Documents\GitHub\AutoworkJavaServer\AutoWorkJavaServer\src\UserPackage" />
       <recent name="C:\Users\Henrik\Documents\GitHub\AutoWorkJavaServer\AutoWorkJavaServer\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Henrik\Documents\GitHub\AutoWorkJavaServer\AutoWorkJavaServer\src\UserPackage" />
-      <recent name="C:\Users\Henrik\Documents\GitHub\AutoWorkJavaServer\AutoWorkJavaServer\src\ObjectsPackage" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Server">
@@ -792,11 +788,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458916030450</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Bugfix">
+      <created>1459806834112</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1459806834112</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -806,7 +808,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.72384036" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32474804" sideWeight="0.27615964" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32474804" sideWeight="0.27615964" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15647922" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
@@ -857,13 +859,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Operations/CreateUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1285,14 +1280,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserPackage/BufferModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/GetNewPassword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23130435">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.44347826">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2577#2578#0" expanded="true" />
+            <element signature="e#2604#2605#0" expanded="true" />
           </folding>
         </state>
       </provider>
