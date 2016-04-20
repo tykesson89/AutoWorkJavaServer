@@ -43,28 +43,35 @@ public class CreateUser extends Thread {
             user = (User) ois.readObject();
             company = (Company)ois.readObject();
             try {
+
                 String firstname = user.getFirstname();
                 String lastname = user.getLastname();
                 String email = user.getEmail();
                 String oldPassword = user.getOldPassword();
                 double houelywage = company.getHourlyWage();
                 String companyName = company.getCompanyName();
+                String subject = "Welcome to AutoWork " + firstname+"!";
+                String message = "Thank you for using AutoWork " + firstname + lastname+"\n Your password is " + oldPassword +".";
+                SendMail sendMail = new SendMail();
+              String response = sendMail.SendMail(email, subject, message);
+                if(response.equals("No Email")) {
+                    oos.writeObject("No Email");
+                }else {
+                    conn = DriverManager.getConnection(url, username, password);
+                    st = conn.createStatement();
 
-                conn = DriverManager.getConnection(url, username, password);
-                st = conn.createStatement();
+                    st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + oldPassword + "' );");
+                    int userId = -1;
+                    ResultSet rs = null;
+                    rs = st.executeQuery("SELECT LAST_INSERT_ID()");
 
-                st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + oldPassword + "' );");
-                int userId = -1;
-                ResultSet rs = null;
-                rs = st.executeQuery("SELECT LAST_INSERT_ID()");
-
-                if (rs.next()) {
-                    userId = rs.getInt(1);
+                    if (rs.next()) {
+                        userId = rs.getInt(1);
+                    }
+                    tt = conn.createStatement();
+                    tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
+                    oos.writeObject("Success");
                 }
-                tt = conn.createStatement();
-                tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
-
-
 
             } catch (SQLException ex) {
                 if (ex.getMessage().contains("Duplicate")) {

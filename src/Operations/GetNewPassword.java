@@ -49,7 +49,8 @@ public class GetNewPassword extends Thread {
                 int value = rand.nextInt(899999)+100000;
                 String subject = "New Password for autowork";
                 String text = "Your new password is "+ value + ". Please change it.";
-                SendMail sendMail = new SendMail(email, subject, text);
+                SendMail sendMail = new SendMail();
+                sendMail.SendMail(email, subject, text);
                 String str = String.valueOf(value);
                 System.out.println(str);
                 conn = DriverManager.getConnection(url, username, password);

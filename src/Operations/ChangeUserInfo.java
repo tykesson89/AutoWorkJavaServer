@@ -36,7 +36,6 @@ public class ChangeUserInfo extends Thread {
         String username = "root";
         String password = "hejhej89";
         Statement st = null;
-        Statement tt = null;
         System.out.println("tråden startar");
         try {
             user = (User) ois.readObject();
@@ -54,25 +53,14 @@ public class ChangeUserInfo extends Thread {
                 String pass = rs.getString("Password");
                 System.out.println(pass);
                 System.out.println(oldPassword);
-                System.out.println(newPassword);
                 if(!pass.equals(oldPassword)){
                     oos.writeObject("Password is incorrect");
-                    System.out.println(1);
-                }else if(!newPassword.isEmpty()){
-                    st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "', password = '" + newPassword + "' where userid = " + userId + ";");
-                    oos.writeObject("Success");
-                    System.out.println(2);
-
 
                 }else {
                     st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "' where userid = " + userId + ";");
                     oos.writeObject("Success");
-                    System.out.println(3);
                 }
-                user = new User(firstname, lastname, email, null, userId);
-
-                oos.writeObject(user);
-
+                user = new User(firstname, lastname, email, userId);
 
             } catch (SQLException ex) {
                 oos.writeObject("Something went wrong");

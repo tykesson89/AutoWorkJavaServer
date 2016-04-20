@@ -19,7 +19,7 @@ public class SendMail {
     static String emailSubject = "Test Mail";
     static String emailBody = ":)";
 
-    public SendMail(String receiverEmailID, String emailSubject, String emailBody) {
+    public String SendMail(String receiverEmailID, String emailSubject, String emailBody) {
         this.receiverEmailID = receiverEmailID;
         this.emailSubject = emailSubject;
         this.emailBody = emailBody;
@@ -45,9 +45,9 @@ public class SendMail {
             Transport.send(msg);
             System.out.println("Message send Successfully:)");
         } catch (Exception mex) {
-            GetNewPassword getNewPassword = new GetNewPassword();
-            getNewPassword.getMessage("fail");
+            return "No Email";
         }
+        return "Email sent";
     }
 
     public class SMTPAuthenticator extends javax.mail.Authenticator {
