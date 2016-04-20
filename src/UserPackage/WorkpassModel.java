@@ -1,74 +1,86 @@
 package UserPackage;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
-
-import UserPackage.Company;
+import java.util.GregorianCalendar;
 
 /**
  * Created by oladahl on 16-03-28.
  */
 public class WorkpassModel implements Serializable{
     private static final long serialVersionUID = 1L;
-    private long id;
-    private int userID;
+    private long workpassId;
+    private int mySQLId;
+    private int userId;
+    private int mySQLcompanyId;
+    private int companyId;
     private String title;
+    private GregorianCalendar startDateTime;
+    private GregorianCalendar endDateTime;
+    private double breaktime;
+    private double workingHours;
     private double salary;
-    private Company company;
-    private Timestamp startDateTime;
-    private Timestamp endDateTime;
-    private int breaktime;
     private String note;
+    private String ACTION_TAG;
 
-    public WorkpassModel(String title, double salary, Company company, Timestamp startDateTime,
-                         Timestamp endDateTime, int breaktime, String note) {
+
+    @Override
+    public String toString() {
+        return "WorkpassModel{" +
+                "workpassId=" + workpassId +
+                ", userId=" + userId +
+                ", title='" + title + '\'' +
+                ", startDateTime=" + startDateTime.toString() +
+                ", endDateTime=" + endDateTime.toString() +
+                ", breaktime=" + breaktime +
+                ", workingHours=" + workingHours +
+                ", salary=" + salary +
+                ", note='" + note + '\'' +
+                '}';
+    }
+
+    public WorkpassModel(String title, double salary, Company company, GregorianCalendar startDateTime,
+                         GregorianCalendar endDateTime, double breaktime, double workingHours, String note) {
         this.title = title;
-        this.salary = salary;
-        this.company = company;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
         this.breaktime = breaktime;
-        this.note = note;
-    }
-    public WorkpassModel(long id, int userID, String title, double salary, Company company, Timestamp startDateTime,
-                         Timestamp endDateTime, int breaktime, String note){
-        this.id = id;
-        this.userID = userID;
-        this.title = title;
+        this.workingHours = workingHours;
         this.salary = salary;
-        this.company = company;
-        this.startDateTime = startDateTime;
-        this.endDateTime = endDateTime;
-        this.breaktime = breaktime;
         this.note = note;
     }
-
 
     public WorkpassModel(){
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 
-    public Company getCompany(){
-        return company;
+    public int getCompanyId(){
+        return companyId;
     }
 
-    public void setStartDateTime(Timestamp startDateTime){
+    public void setMySQLcompanyId(int mySQLcompanyId) {
+        this.mySQLcompanyId = mySQLcompanyId;
+    }
+
+    public int getMySQLcompanyId(){
+        return mySQLcompanyId;
+    }
+
+    public void setStartDateTime(GregorianCalendar startDateTime){
         this.startDateTime = startDateTime;
     }
 
-    public Timestamp getStartDateTime() {
+    public GregorianCalendar getStartDateTime() {
         return startDateTime;
     }
 
-    public void setEndDateTime(Timestamp endDateTime) {
+    public void setEndDateTime(GregorianCalendar endDateTime) {
         this.endDateTime = endDateTime;
     }
 
-    public Timestamp getEndDateTime() {
+    public GregorianCalendar getEndDateTime() {
         return endDateTime;
     }
 
@@ -80,22 +92,6 @@ public class WorkpassModel implements Serializable{
         return salary;
     }
 
-    public long getUserId() {
-        return userID;
-    }
-
-    public void setUserId(int userID) {
-        this.userID = userID;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -104,19 +100,59 @@ public class WorkpassModel implements Serializable{
         this.title = title;
     }
 
-    public int getBreaktime() {
-        return breaktime;
-    }
-
-    public void setBreaktime(int breaktime) {
-        this.breaktime = breaktime;
-    }
-
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public double getBreaktime() {
+        return breaktime;
+    }
+
+    public void setBreaktime(double breaktime) {
+        this.breaktime = breaktime;
+    }
+
+    public long getWorkpassId() {
+        return workpassId;
+    }
+
+    public void setWorkpassId(long workpassId) {
+        this.workpassId = workpassId;
+    }
+
+    public double getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(double workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    public int getMySQLId() {
+        return mySQLId;
+    }
+
+    public void setMySQLId(int mySQLId) {
+        this.mySQLId = mySQLId;
+    }
+
+    public String getACTION_TAG() {
+        return ACTION_TAG;
+    }
+
+    public void setACTION_TAG(String ACTION_TAG) {
+        this.ACTION_TAG = ACTION_TAG;
     }
 }
