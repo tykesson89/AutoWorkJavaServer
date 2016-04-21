@@ -43,16 +43,19 @@ public class CreateCompany extends Thread {
                 double houelywage = company.getHourlyWage();
                 String companyName = company.getCompanyName();
                 int userId = company.getUserId();
+                long localId = company.getCompanyId();
                 conn = DriverManager.getConnection(url, username, password);
 
                 tt = conn.createStatement();
-                tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage) VALUES('" + userId + "','" + companyName + "','" + houelywage + "' );");
+                tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage, localcompanyid) VALUES('" + userId + "','" + companyName + "','" + houelywage + "','" + localId + "' );");
                 int companyId = -1;
                 ResultSet co = null;
                 co = tt.executeQuery("SELECT LAST_INSERT_ID()");
                 if (co.next()) {
                     companyId = co.getInt(1);
-                    company = new Company(companyName, houelywage, userId, companyId);
+                    company.setServerID(companyId);
+                    company.setIsSynced(1);
+                    company.setActionTag(null);
                 }
                 oos.writeObject(company);
 

@@ -6,41 +6,28 @@ import java.util.GregorianCalendar;
 /**
  * Created by oladahl on 16-03-28.
  */
-public class WorkpassModel implements Serializable{
+public class Workpass implements Serializable{
     private static final long serialVersionUID = 1L;
-    private long workpassId;
-    private int mySQLId;
+    private long workpassID;
+    private int serverID;
     private int userId;
-    private int mySQLcompanyId;
-    private int companyId;
     private String title;
+    private long companyId; //TODO Ändra till long som lokalt id.
+    private int companyServerID;
     private GregorianCalendar startDateTime;
     private GregorianCalendar endDateTime;
     private double breaktime;
-    private double workingHours;
     private double salary;
     private String note;
-    private String ACTION_TAG;
+    private double workingHours;
+    private int isSynced;
+    private String actionTag;
 
 
-    @Override
-    public String toString() {
-        return "WorkpassModel{" +
-                "workpassId=" + workpassId +
-                ", userId=" + userId +
-                ", title='" + title + '\'' +
-                ", startDateTime=" + startDateTime.toString() +
-                ", endDateTime=" + endDateTime.toString() +
-                ", breaktime=" + breaktime +
-                ", workingHours=" + workingHours +
-                ", salary=" + salary +
-                ", note='" + note + '\'' +
-                '}';
-    }
-
-    public WorkpassModel(String title, double salary, Company company, GregorianCalendar startDateTime,
-                         GregorianCalendar endDateTime, double breaktime, double workingHours, String note) {
+    public Workpass(String title, double salary, long companyId, GregorianCalendar startDateTime,
+                    GregorianCalendar endDateTime, double breaktime, double workingHours, String note) {
         this.title = title;
+        this.companyId = companyId;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
         this.breaktime = breaktime;
@@ -49,23 +36,15 @@ public class WorkpassModel implements Serializable{
         this.note = note;
     }
 
-    public WorkpassModel(){
+    public Workpass(){
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyID(long companyId) {
         this.companyId = companyId;
     }
 
-    public int getCompanyId(){
+    public long getCompanyID(){
         return companyId;
-    }
-
-    public void setMySQLcompanyId(int mySQLcompanyId) {
-        this.mySQLcompanyId = mySQLcompanyId;
-    }
-
-    public int getMySQLcompanyId(){
-        return mySQLcompanyId;
     }
 
     public void setStartDateTime(GregorianCalendar startDateTime){
@@ -124,12 +103,12 @@ public class WorkpassModel implements Serializable{
         this.breaktime = breaktime;
     }
 
-    public long getWorkpassId() {
-        return workpassId;
+    public long getWorkpassID() {
+        return workpassID;
     }
 
-    public void setWorkpassId(long workpassId) {
-        this.workpassId = workpassId;
+    public void setWorkpassID(long workpassID) {
+        this.workpassID = workpassID;
     }
 
     public double getWorkingHours() {
@@ -140,19 +119,36 @@ public class WorkpassModel implements Serializable{
         this.workingHours = workingHours;
     }
 
-    public int getMySQLId() {
-        return mySQLId;
+
+    public int getServerID() {
+        return serverID;
     }
 
-    public void setMySQLId(int mySQLId) {
-        this.mySQLId = mySQLId;
+    public void setServerID(int serverID) {
+        this.serverID = serverID;
     }
 
-    public String getACTION_TAG() {
-        return ACTION_TAG;
+    public String getActionTag() {
+        return actionTag;
     }
 
-    public void setACTION_TAG(String ACTION_TAG) {
-        this.ACTION_TAG = ACTION_TAG;
+    public void setActionTag(String actionTag) {
+        this.actionTag = actionTag;
+    }
+
+    public int getCompanyServerID() {
+        return companyServerID;
+    }
+
+    public void setCompanyServerID(int companyServerID) {
+        this.companyServerID = companyServerID;
+    }
+
+    public int getIsSynced() {
+        return isSynced;
+    }
+
+    public void setIsSynced(int isSynced) {
+        this.isSynced = isSynced;
     }
 }

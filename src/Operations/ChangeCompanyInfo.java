@@ -45,7 +45,7 @@ public class ChangeCompanyInfo extends Thread {
             try {
                 String companyName = company.getCompanyName();
                 double hourlyWage = company.getHourlyWage();
-                int companyId = company.getCompanyId();
+                int companyId = company.getServerID();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
@@ -53,7 +53,8 @@ public class ChangeCompanyInfo extends Thread {
                 st.executeUpdate("update company set companyname = '" + companyName + "', hourlywage = '" + hourlyWage + "' where companyid = " + companyId + ";");
 
 
-
+                company.setActionTag(null);
+                company.setIsSynced(1);
 
                 oos.writeObject(company);
 

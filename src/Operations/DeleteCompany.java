@@ -43,12 +43,12 @@ public class DeleteCompany extends Thread {
         try {
             company = (Company) ois.readObject();
             try {
-                int companyId = company.getCompanyId();
+                int companyId = company.getServerID();
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
 
-                st.executeQuery("DELETE FROM company where companyid = '" + companyId + "';");
+               st.executeQuery("DELETE FROM company where companyid = '" + companyId + "';");
 
 
 
