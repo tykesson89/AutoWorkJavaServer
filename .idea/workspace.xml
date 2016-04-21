@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeUserInfo.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeUserInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/User.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" afterPath="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Server/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserPackage/User.java" afterPath="$PROJECT_DIR$/src/UserPackage/User.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
@@ -87,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/Operations/ChangePassword.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+              <caret line="55" column="82" selection-start-line="55" selection-start-column="82" selection-end-line="55" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,12 +106,9 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7378472">
-              <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
-              <folding>
-                <element signature="e#2472#2473#0" expanded="true" />
-                <element signature="e#2510#2511#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.5069444">
+              <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -298,6 +293,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Operations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,7 +803,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461188147290</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Change password fixat">
+      <created>1461246826035</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1461246826035</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -858,7 +863,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix i REG" />
     <MESSAGE value="Bugfix i Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix i Login" />
+    <MESSAGE value="Change password fixat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change password fixat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1239,7 +1245,7 @@
     <entry file="file://$PROJECT_DIR$/src/Operations/ChangePassword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <caret line="55" column="82" selection-start-line="55" selection-start-column="82" selection-end-line="55" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1248,12 +1254,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7378472">
-          <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
-          <folding>
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2510#2511#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5069444">
+          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -102,7 +102,7 @@ public class User implements UserInterface {
 
     @Override
     public void setNewPassword(String newPassword) {
-this.newPassword = newPassword;
+    this.newPassword = newPassword;
     }
 
     @Override
