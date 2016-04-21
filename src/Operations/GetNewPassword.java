@@ -21,7 +21,8 @@ public class GetNewPassword extends Thread {
     private ObjectOutputStream oos;
     private Connection conn;
     private String response;
-    public GetNewPassword(){
+
+    public GetNewPassword() {
 
     }
 
@@ -41,26 +42,24 @@ public class GetNewPassword extends Thread {
         String password = "hejhej89";
         Statement st = null;
         try {
-            String email = (String)ois.readObject();
+            String email = (String) ois.readObject();
             System.out.println("tar emot user");
             try {
-
                 Random rand = new Random();
-                int value = rand.nextInt(899999)+100000;
-                String subject = "New Password for autowork";
-                String text = "Your new password is "+ value + ". Please change it.";
-                SendMail sendMail = new SendMail();
-                sendMail.SendMail(email, subject, text);
+                int value = rand.nextInt(899999) + 100000;
                 String str = String.valueOf(value);
-                System.out.println(str);
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
                 st.executeUpdate("update users set password = '" + str + "' where email = '" + email + "';");
-                response = "success";
+                String subject = "New Password for autowork";
+                String text = "Your new password is " + value + ". Please change it.";
+                SendMail sendMail = new SendMail();
+                String response = sendMail.SendMail(email, subject, text);
                 oos.writeObject(response);
 
+
             } catch (SQLException ex) {
-                response = "fail";
+                response = "No Email";
                 oos.writeObject(response);
 
                 System.out.println("SQLException: " + ex.getMessage());
@@ -72,18 +71,13 @@ public class GetNewPassword extends Thread {
             System.out.println(e.getLocalizedMessage());
             System.out.println(e.getStackTrace().toString());
             try {
-                oos.writeObject(response);
-            }catch (Exception f){
+                oos.writeObject("Something went wrong");
+            } catch (Exception f) {
 
             }
         }
     }
-
-public void getMessage(String str){
-    this.response = str;
 }
-
-    }
 
 
 
