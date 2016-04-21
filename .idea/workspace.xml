@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeUserInfo.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeUserInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateUser.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/SendMail.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/SendMail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/WorkpassModel.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/WorkpassModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateUser.java" afterPath="$PROJECT_DIR$/src/Operations/CreateUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/Login.java" afterPath="$PROJECT_DIR$/src/Operations/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserPackage/WorkpassModel.java" afterPath="$PROJECT_DIR$/src/UserPackage/WorkpassModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" afterPath="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Server/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserPackage/User.java" afterPath="$PROJECT_DIR$/src/UserPackage/User.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7934028">
+            <state vertical-scroll-proportion="0.0">
               <caret line="124" column="52" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
               <folding />
             </state>
@@ -57,6 +53,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CreateUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/CreateUser.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,12 +73,47 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ChangeUserInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangePassword.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Operations/ChangePassword.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SendMail.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/SendMail.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7378472">
+              <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
+              <folding>
+                <element signature="e#2472#2473#0" expanded="true" />
+                <element signature="e#2510#2511#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,15 +176,16 @@
         <option value="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassModel (3).java" />
         <option value="$PROJECT_DIR$/src/Operations/DeleteUser.java" />
-        <option value="$PROJECT_DIR$/src/UserPackage/User.java" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUI.jfd" />
-        <option value="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
         <option value="$PROJECT_DIR$/src/Operations/SendMail.java" />
         <option value="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateUser.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassModel.java" />
         <option value="$PROJECT_DIR$/src/Operations/Login.java" />
+        <option value="$PROJECT_DIR$/src/Operations/ChangeUserInfo.java" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
+        <option value="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
+        <option value="$PROJECT_DIR$/src/UserPackage/User.java" />
       </list>
     </option>
   </component>
@@ -222,6 +264,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserPackage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -252,10 +298,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Operations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,7 +798,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461166399592</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Bugfix i Login">
+      <created>1461188147290</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1461188147290</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -769,7 +817,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.72384036" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32362822" sideWeight="0.27615964" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32362822" sideWeight="0.27615964" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16320294" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
@@ -809,7 +857,8 @@
     <MESSAGE value="lagt till i user" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix i REG" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix i REG" />
+    <MESSAGE value="Bugfix i Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix i Login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1109,37 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
-          <folding>
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1866#1867#0" expanded="false" />
-            <element signature="e#1930#1931#0" expanded="false" />
-            <element signature="e#1972#1973#0" expanded="false" />
-            <element signature="e#2021#2022#0" expanded="false" />
-            <element signature="e#2052#2053#0" expanded="false" />
-            <element signature="e#2114#2115#0" expanded="false" />
-            <element signature="e#2154#2155#0" expanded="false" />
-            <element signature="e#2200#2201#0" expanded="false" />
-            <element signature="e#2228#2229#0" expanded="false" />
-            <element signature="e#2284#2285#0" expanded="false" />
-            <element signature="e#2318#2319#0" expanded="false" />
-            <element signature="e#2370#2371#0" expanded="false" />
-            <element signature="e#2404#2405#0" expanded="false" />
-            <element signature="e#2562#2563#0" expanded="false" />
-            <element signature="e#2596#2597#0" expanded="false" />
-            <element signature="e#2661#2662#0" expanded="false" />
-            <element signature="e#2707#2708#0" expanded="false" />
-            <element signature="e#2738#2739#0" expanded="false" />
-            <element signature="e#2767#2768#0" expanded="false" />
-            <element signature="e#2808#2809#0" expanded="false" />
-            <element signature="e#2844#2845#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/mail.jar!/javax/mail/Transport.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34854016">
@@ -1158,30 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33256352">
           <caret line="234" column="12" selection-start-line="234" selection-start-column="12" selection-end-line="234" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7378472">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5277778">
-          <caret line="56" column="57" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/GetNewPassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1212,9 +1206,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7934028">
+        <state vertical-scroll-proportion="0.0">
           <caret line="124" column="52" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/GetNewPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/ChangePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserPackage/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7378472">
+          <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
+          <folding>
+            <element signature="e#2472#2473#0" expanded="true" />
+            <element signature="e#2510#2511#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

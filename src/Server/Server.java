@@ -55,6 +55,8 @@ public class Server extends Thread {
                     new DeleteUser(socket, oos, ois);
                 }else if(tag.equals("New Password")){
                     new GetNewPassword(socket, ois, oos);
+                }else if(tag.equals("Change Password")){
+                    new ChangePassword(socket, oos, ois);
                 }
             }
             }catch(Exception e){

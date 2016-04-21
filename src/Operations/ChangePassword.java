@@ -9,10 +9,9 @@ import java.net.Socket;
 import java.sql.*;
 
 /**
- * Created by Henrik on 2016-03-22.
+ * Created by Henrik on 2016-04-21.
  */
-public class ChangeUserInfo extends Thread {
-
+public class ChangePassword extends Thread{
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
@@ -20,7 +19,7 @@ public class ChangeUserInfo extends Thread {
     private User user;
 
 
-    public ChangeUserInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public ChangePassword(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
@@ -40,23 +39,21 @@ public class ChangeUserInfo extends Thread {
         try {
             user = (User) ois.readObject();
             try {
-                String firstname = user.getFirstname();
-                String lastname = user.getLastname();
-                String email = user.getEmail();
+                String newPassword = user.getNewPassword();
                 String oldPassword = user.getOldPassword();
                 int userId = user.getUserid();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-              ResultSet rs =  st.executeQuery("SELECT password FROM users WHERE userid ="+userId);
+                ResultSet rs =  st.executeQuery("SELECT password FROM users WHERE userid ="+userId);
                 rs.first();
                 String pass = rs.getString("password");
-                System.out.println(pass);
+               // System.out.println(pass);
                 System.out.println(oldPassword);
                 if(!pass.equals(oldPassword)){
                     oos.writeObject("Password is incorrect");
 
                 }else {
-                    st.executeUpdate("update users set firstname = '" + firstname + "', lastname = '" + lastname + "', email = '" + email + "' where userid = " + userId + ";");
+                    st.executeUpdate("update users set password = '" + newPassword + "' where userid = " + userId + ";");
                     oos.writeObject("Success");
                 }
 
@@ -76,15 +73,7 @@ public class ChangeUserInfo extends Thread {
     }
 
 
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
