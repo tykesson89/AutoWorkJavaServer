@@ -120,7 +120,9 @@ public class Login extends Thread {
                     workpass.setNote(rs.getString("notes"));
                     workpass.setEndDateTime(formatStringToCalendar(rs.getString("endtime")));
                     workpass.setBreaktime(rs.getDouble("breaktime"));
-                    workpass.setCompanyID(rs.getLong("localcompanyid"));
+                    int localcompanyid = rs.getInt("localcompanyid");
+                    long companyid = Long.parseLong(String.valueOf(localcompanyid));
+                    workpass.setCompanyID(companyid);
                     workpass.setCompanyServerID(rs.getInt("companyid"));
                     workpass.setWorkingHours(rs.getDouble("hours"));
                     workpass.setSalary(rs.getDouble("salary"));

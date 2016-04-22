@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/DeleteWorkpass.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/CompanyInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/UserPackage/BufferModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/UserPackage/CompanyInterface.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/UserPackage/WorkpassModel.java" afterPath="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeCompanyInfo.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeCompanyInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateCompany.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateCompany.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteCompany.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteCompany.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/Company.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/Company.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/UserPackage/WorkpassModel.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" afterPath="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateCompany.java" afterPath="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/DeleteCompany.java" afterPath="$PROJECT_DIR$/src/Operations/DeleteCompany.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/GetNewPassword.java" afterPath="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/Login.java" afterPath="$PROJECT_DIR$/src/Operations/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Server/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserPackage/Company.java" afterPath="$PROJECT_DIR$/src/UserPackage/Company.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.27272728">
+              <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3133#3142#0" expanded="true" />
@@ -83,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6898396">
+            <state vertical-scroll-proportion="0.0">
               <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
               <folding />
             </state>
@@ -176,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
         <option value="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
-        <option value="$PROJECT_DIR$/src/Operations/Login.java" />
         <option value="$PROJECT_DIR$/src/Server/Server.java" />
+        <option value="$PROJECT_DIR$/src/Operations/Login.java" />
       </list>
     </option>
   </component>
@@ -818,7 +801,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461248903588</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Börjat fixa Workpass">
+      <created>1461277243421</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1461277243421</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -873,7 +862,8 @@
     <MESSAGE value="Bugfix i REG" />
     <MESSAGE value="Bugfix i Login" />
     <MESSAGE value="Change password fixat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change password fixat" />
+    <MESSAGE value="Börjat fixa Workpass" />
+    <option name="LAST_COMMIT_MESSAGE" value="Börjat fixa Workpass" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1274,22 +1264,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27272728">
+          <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3133#3142#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6898396">
-          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
