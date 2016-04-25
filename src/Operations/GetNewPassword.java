@@ -40,12 +40,14 @@ public class GetNewPassword extends Thread {
             String email = (String) ois.readObject();
             System.out.println("tar emot user");
             try {
+                EncryptPassword encryptPassword = new EncryptPassword();
                 Random rand = new Random();
                 int value = rand.nextInt(899999) + 100000;
                 String str = String.valueOf(value);
+                String encrptedPassword = encryptPassword.encryptPassword(str);
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
-                st.executeUpdate("update users set password = '" + str + "' where email = '" + email + "';");
+                st.executeUpdate("update users set password = '" + encrptedPassword + "' where email = '" + email + "';");
                 String subject = "New Password for autowork";
                 String text = "Your new password is " + value + ". Please change it.";
                 SendMail sendMail = new SendMail();

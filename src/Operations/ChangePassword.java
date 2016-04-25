@@ -39,21 +39,23 @@ public class ChangePassword extends Thread{
         try {
             user = (User) ois.readObject();
             try {
+                EncryptPassword encryptPassword = new EncryptPassword();
                 String newPassword = user.getNewPassword();
+                String encryptNewPassword = encryptPassword.encryptPassword(newPassword);
                 String oldPassword = user.getOldPassword();
                 int userId = user.getUserid();
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
                 ResultSet rs =  st.executeQuery("SELECT password FROM users WHERE userid ="+userId);
                 rs.first();
-                String pass = rs.getString("password");
-               // System.out.println(pass);
+                String pass = encryptPassword.decryptPassword(rs.getString("password"));
+                System.out.println(pass);
                 System.out.println(oldPassword);
                 if(!pass.equals(oldPassword)){
                     oos.writeObject("Password is incorrect");
 
                 }else {
-                    st.executeUpdate("update users set password = '" + newPassword + "' where userid = " + userId + ";");
+                    st.executeUpdate("update users set password = '" + encryptNewPassword + "' where userid = " + userId + ";");
                     oos.writeObject("Success");
                 }
 

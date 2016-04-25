@@ -25,6 +25,7 @@ public class CreateUser extends Thread {
     public CreateUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;
+        EncryptPassword encryptPassword = new EncryptPassword();
         this.ois = ois;
         this.oos = oos;
         start();
@@ -35,7 +36,7 @@ public class CreateUser extends Thread {
 
     public void run() {
         System.out.println("tråden startar");
-
+        EncryptPassword encryptPassword = new EncryptPassword();
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -49,6 +50,7 @@ public class CreateUser extends Thread {
                 String lastname = user.getLastname();
                 String email = user.getEmail();
                 String oldPassword = user.getOldPassword();
+              String encryptedPassword =  encryptPassword.encryptPassword(oldPassword);
                 double houelywage = company.getHourlyWage();
                 String companyName = company.getCompanyName();
 
@@ -65,7 +67,7 @@ public class CreateUser extends Thread {
                     } else {
 
 
-                        st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + oldPassword + "' );");
+                        st.executeUpdate("INSERT INTO users(firstname, lastname, email, password) VALUES('" + firstname + "','" + lastname + "','" + email + "','" + encryptedPassword + "' );");
                         int userId = -1;
                         ResultSet rs = null;
                         rs = st.executeQuery("SELECT LAST_INSERT_ID()");

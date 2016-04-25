@@ -6,6 +6,7 @@ package Operations;
 import UserPackage.Company;
 import UserPackage.User;
 import UserPackage.Workpass;
+import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
 
 import java.util.Date;
 import java.io.IOException;
@@ -67,7 +68,7 @@ public class Login extends Thread {
     }
     public void run() {
         System.out.println("tråden startar");
-
+        EncryptPassword encryptPassword = new EncryptPassword();
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -84,7 +85,7 @@ public class Login extends Thread {
                 }else if(checkPassword(email, oldPassword)==false){
                     oos.writeObject("Wrong password");
                 }else {
-                    ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "' AND password = '" + oldPassword + "';");
+                    ResultSet rs = st.executeQuery("SELECT userid, firstname, lastname, email FROM users WHERE email = '" + email + "';");
                     System.out.println("query skapad");
                     rs.first();
                     int userID = rs.getInt(1);
@@ -163,17 +164,28 @@ public class Login extends Thread {
     }
     public boolean checkPassword(String email, String oldPassword){
         try {
+            EncryptPassword encryptPassword = new EncryptPassword();
             Statement st = null;
             conn = DriverManager.getConnection(url, username, password);
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM users WHERE email = '" + email + "' AND password = '" + oldPassword +"';");
+            ResultSet rs = st.executeQuery("SELECT password FROM users WHERE email = '" + email + "';");
             rs.first();
-            String testMail = rs.getString("email");
-            String testPass = rs.getString("password");
+            try {
+                String testPass = encryptPassword.decryptPassword(rs.getString("password"));
+
+            if(testPass.equals(oldPassword)){
+                return true;
+            }else{
+                return false;
+            }
+            }catch(EncryptionOperationNotPossibleException e){
+                return false;
+            }
+
         }catch(SQLException w){
             return false;
         }
-        return true;
+
     }
 
 
