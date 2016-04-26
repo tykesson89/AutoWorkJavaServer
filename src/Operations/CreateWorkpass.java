@@ -1,6 +1,8 @@
 package Operations;
 
 import UserPackage.Workpass;
+import jdk.nashorn.api.scripting.JSObject;
+import jdk.nashorn.internal.runtime.JSONFunctions;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,8 +11,8 @@ import java.net.Socket;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Created by Henrik on 2016-04-21.
@@ -53,7 +55,8 @@ public class CreateWorkpass extends Thread {
             ex.printStackTrace();
         }
 
-        GregorianCalendar cal = new GregorianCalendar();
+        TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
+        GregorianCalendar cal = new GregorianCalendar(timeZone);
         cal.setTime(date);
 
         return cal;
@@ -64,7 +67,7 @@ public class CreateWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej";
+        String password = "hejhej89";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -77,6 +80,9 @@ public class CreateWorkpass extends Thread {
                 String title = workpass.getTitle();
                 long companyId = workpass.getCompanyID();
                 int companyServerid = workpass.getCompanyServerID();
+                TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
+                workpass.getEndDateTime().setTimeZone(timeZone);
+                workpass.getStartDateTime().setTimeZone(timeZone);
                 String starttime = formatCalendarToString(workpass.getStartDateTime());
                 String endtime = formatCalendarToString(workpass.getEndDateTime());
                 double breaktime = workpass.getBreaktime();
@@ -86,25 +92,23 @@ public class CreateWorkpass extends Thread {
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
                 if(companyServerid == -1){
-                    ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '"+userId+"' and localcomapnyid = '"+ companyId+"';");
+                    ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '"+userId+"' and localcompanyid = '"+ companyId+"';");
                     rs.first();
                     companyServerid = rs.getInt("companyid");
                 }
-                String query = "INSERT INTO workpass(title, salary, breaktime, note, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyId) VALUES( '"+
-                        title+"','"+salary+"','"+breaktime+"','"+note+"','"+workinghours+"','"+companyServerid+"','"+userId+"','"+starttime+"','"+endtime+"','"+workpassid+"','"+companyId+"';";
+                String query = "INSERT INTO workpass(title, salary, breaktime, notes, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyId) VALUES( '"+
+                        title+"','"+salary+"','"+breaktime+"','"+note+"','"+workinghours+"','"+companyServerid+"','"+userId+"','"+starttime+"','"+endtime+"','"+workpassid+"','"+companyId+"');";
 
                 st.executeUpdate(query);
                 serverId  = -1;
                 ResultSet rs = null;
                 rs = st.executeQuery("SELECT LAST_INSERT_ID()");
                 if (rs.next()) {
-                    serverId = rs.getInt("workpassid");
+                    serverId = rs.getInt(1);
                 }
 
-                workpass.setServerID(serverId);
-                workpass.setActionTag(null);
-                workpass.setIsSynced(1);
-                oos.writeObject(workpass);
+                oos.writeObject(String.valueOf(serverId));
+                System.out.println("Skickad!");
 
 
 

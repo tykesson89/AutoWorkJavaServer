@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Operations/EncryptPassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateUser.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/GetNewPassword.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mail.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangePassword.java" afterPath="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateUser.java" afterPath="$PROJECT_DIR$/src/Operations/CreateUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/GetNewPassword.java" afterPath="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/Login.java" afterPath="$PROJECT_DIR$/src/Operations/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" afterPath="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserPackage/Workpass.java" afterPath="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4884956">
-              <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3230#3239#0" expanded="true" />
@@ -110,23 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateWorkpass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateWorkpass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Operations/CreateWorkpass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.6215722">
+              <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateCompany.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Operations/CreateCompany.java">
+      <file leaf-file-name="Workpass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UserPackage/Workpass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/Server/ServerGUI.java" />
         <option value="$PROJECT_DIR$/src/ObjectsPackage/User.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassInterface.java" />
-        <option value="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/WorkpassModel (3).java" />
         <option value="$PROJECT_DIR$/src/Operations/DeleteUser.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUI.jfd" />
@@ -199,13 +190,14 @@
         <option value="$PROJECT_DIR$/src/Operations/DeleteCompany.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
         <option value="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" />
-        <option value="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
         <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Operations/EncryptPassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateUser.java" />
         <option value="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/Login.java" />
+        <option value="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
+        <option value="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
       </list>
     </option>
   </component>
@@ -220,10 +212,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1293" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -858,12 +850,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461359698241</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Kryptering av lösenord">
+      <created>1461578921165</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1461578921165</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="1" y="1" width="1293" height="1008" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -871,10 +869,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.72384036" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33594626" sideWeight="0.50977993" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34285715" sideWeight="0.50977993" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27017114" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35847527" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33370662" sideWeight="0.49266502" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -914,7 +912,8 @@
     <MESSAGE value="Bugfix i Login" />
     <MESSAGE value="Change password fixat" />
     <MESSAGE value="Börjat fixa Workpass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Börjat fixa Workpass" />
+    <MESSAGE value="Kryptering av lösenord" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kryptering av lösenord" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1225,14 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserPackage/Workpass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40917107">
@@ -1248,7 +1239,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="118" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1257,24 +1248,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/CreateWorkpass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -1291,14 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/EncryptPassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1329,12 +1294,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4884956">
-          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3230#3239#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/EncryptPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserPackage/Workpass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/CreateWorkpass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6215722">
+          <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
