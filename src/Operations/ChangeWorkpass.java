@@ -24,16 +24,17 @@ public class ChangeWorkpass extends Thread {
     private Workpass workpass;
 
 
-
-    public ChangeWorkpass(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public ChangeWorkpass(Socket socket, ObjectOutputStream oos, ObjectInputStream ois, Workpass workpass)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
         this.oos = oos;
+        this.workpass = workpass;
         start();
 
 
     }
+
     private String formatCalendarToString(GregorianCalendar cal) {
         SimpleDateFormat fmt = new SimpleDateFormat("yyyy MM dd HH:mm");
 
@@ -69,49 +70,44 @@ public class ChangeWorkpass extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            workpass = (Workpass)ois.readObject();
-            try {
-                long workpassid = workpass.getWorkpassID();
-                int serverId = workpass.getServerID();
-                int userId = workpass.getUserId();
-                String title = workpass.getTitle();
-                long companyId = workpass.getCompanyID();
-                int companyServerid = workpass.getCompanyServerID();
-                String starttime = formatCalendarToString(workpass.getStartDateTime());
-                String endtime = formatCalendarToString(workpass.getEndDateTime());
-                double breaktime = workpass.getBreaktime();
-                double salary = workpass.getSalary();
-                String note = workpass.getNote();
-                double workinghours = workpass.getWorkingHours();
-                conn = DriverManager.getConnection(url, username, password);
-                st = conn.createStatement();
-                if(companyServerid == -1){
-                ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '"+userId+"' and localcomapnyid = '"+ companyId+"';");
-                    rs.first();
-                    companyServerid = rs.getInt("companyid");
+
+                try {
+                    long workpassid = workpass.getWorkpassID();
+                    int serverId = workpass.getServerID();
+                    int userId = workpass.getUserId();
+                    String title = workpass.getTitle();
+                    long companyId = workpass.getCompanyID();
+                    int companyServerid = workpass.getCompanyServerID();
+                    String starttime = formatCalendarToString(workpass.getStartDateTime());
+                    String endtime = formatCalendarToString(workpass.getEndDateTime());
+                    double breaktime = workpass.getBreaktime();
+                    double salary = workpass.getSalary();
+                    String note = workpass.getNote();
+                    double workinghours = workpass.getWorkingHours();
+                    conn = DriverManager.getConnection(url, username, password);
+                    st = conn.createStatement();
+                    if (companyServerid == -1) {
+                        ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '" + userId + "' and localcomapnyid = '" + companyId + "';");
+                        rs.first();
+                        companyServerid = rs.getInt("companyid");
+                    }
+
+                    st.executeUpdate("update workpass set title = '" + title + "', salary = '" + salary + "', breaktime = '" + breaktime + "', notes = '" + note + "', hours = '" +
+                            workinghours + "', companyid = '" + companyServerid + "', userid = '" + userId + "', starttime = '" + starttime + "', endtime = '" + endtime + "', localworkpassid ='" +
+                            workpassid + "', localcompanyId = '" + companyId + "' where workpassid = '" + serverId + "';");
+
+
+                    oos.writeObject(String.valueOf(serverId));
+
+                } catch (SQLException ex) {
+                    oos.writeObject("Something went wrong");
+
+                    System.out.println("SQLException: " + ex.getMessage());
+                    System.out.println("SQLState: " + ex.getSQLState());
+                    System.out.println("VendorError: " + ex.getErrorCode());
                 }
 
-                st.executeUpdate("update workpass set title = '" + title + "', salary = '" + salary + "', breaktime = '"+breaktime+"', notes = '"+note+"', hours = '" +
-                        workinghours+"', companyid = '"+companyServerid+"', userid = '"+userId+"', starttime = '"+starttime+"', endtime = '"+endtime+"', localworkpassid ='"+
-                        workpassid+"', localcompanyId = '"+companyId+"' where workpassid = '"+serverId+"';");
 
-                workpass.setActionTag(null);
-                workpass.setIsSynced(1);
-                oos.writeObject(workpass);
-
-
-
-
-
-
-
-            } catch (SQLException ex) {
-                oos.writeObject("Something went wrong");
-
-                System.out.println("SQLException: " + ex.getMessage());
-                System.out.println("SQLState: " + ex.getSQLState());
-                System.out.println("VendorError: " + ex.getErrorCode());
-            }
 
         } catch (Exception e) {
             System.out.println(e.getStackTrace());

@@ -57,8 +57,6 @@ public class Server extends Thread {
                     new GetNewPassword(socket, ois, oos);
                 }else if(tag.equals("Change Password")){
                     new ChangePassword(socket, oos, ois);
-                }else if(tag.equals("Change Workpass")){
-                    new ChangeWorkpass(socket, oos, ois);
                 }else if(tag.equals("Create Workpass")){
                     new CreateWorkpass(socket, oos, ois);
                 }

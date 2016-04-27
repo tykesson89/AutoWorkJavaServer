@@ -6,8 +6,13 @@ package Operations;
 import UserPackage.Company;
 import UserPackage.User;
 import UserPackage.Workpass;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import netscape.javascript.JSException;
 import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
-
+import sun.plugin.javascript.JSObject;
 import java.util.Date;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,6 +23,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 
 /**
@@ -33,6 +39,7 @@ public class Login extends Thread {
     private String username = "root";
     private String password = "hejhej89";
     private Workpass workpass;
+    List workpasses = new ArrayList<>();
     ArrayList<Workpass> workpasslist;
 
     public Login(Socket socket, ObjectInputStream ois, ObjectOutputStream oos)
@@ -112,7 +119,7 @@ public class Login extends Thread {
                     oos.writeObject(list);
                 rs = st.executeQuery("SELECT workpassid, title, companyid, starttime, endtime," +
                         " salary, breaktime, notes, localcompanyid, hours FROM workpass WHERE userid ="+userID+";");
-                while(rs.next()){
+                while(rs.next()) {
                     workpasslist = new ArrayList<>();
                     workpass = new Workpass();
                     workpass.setServerID(rs.getInt("workpassid"));
@@ -128,9 +135,14 @@ public class Login extends Thread {
                     workpass.setWorkingHours(rs.getDouble("hours"));
                     workpass.setSalary(rs.getDouble("salary"));
                     workpass.setUserId(userID);
-                    workpasslist.add(workpass);
+
+                    Gson gson = new GsonBuilder().create();
+
+                    workpasses.add(gson.toJson(workpass));
+
                 }
-                oos.writeObject(workpasslist);
+
+                oos.writeObject(workpasses);
                 }
             } catch (SQLException ex) {
                 oos.writeObject("Something went wrong");
