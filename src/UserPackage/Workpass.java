@@ -33,7 +33,7 @@ public class Workpass implements Serializable{
     private int serverID;
     private int userId;
     private String title;
-    private long companyId; //TODO Ändra till long som lokalt id.
+    private long companyId;
     private int companyServerID;
     private GregorianCalendar startDateTime;
     private GregorianCalendar endDateTime;
@@ -44,6 +44,25 @@ public class Workpass implements Serializable{
     private int isSynced;
     private String actionTag;
 
+    @Override
+    public String toString() {
+        return "Workpass{" +
+                "workpassID=" + workpassID +
+                ", serverID=" + serverID +
+                ", userId=" + userId +
+                ", title='" + title + '\'' +
+                ", companyId=" + companyId +
+                ", companyServerID=" + companyServerID +
+                ", startDateTime=" + startDateTime.get(Calendar.DATE) +
+                ", endDateTime=" + endDateTime.get(Calendar.DATE) +
+                ", breaktime=" + breaktime +
+                ", salary=" + salary +
+                ", note='" + note + '\'' +
+                ", workingHours=" + workingHours +
+                ", isSynced=" + isSynced +
+                ", actionTag='" + actionTag + '\'' +
+                '}';
+    }
 
     public Workpass(String title, double salary, long companyId, GregorianCalendar startDateTime,
                     GregorianCalendar endDateTime, double breaktime, double workingHours, String note) {

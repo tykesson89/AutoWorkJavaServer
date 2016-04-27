@@ -2,6 +2,7 @@ package Operations;
 
 import UserPackage.Workpass;
 
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.*;
+import java.util.Date;
+
 
 /**
  * Created by Henrik on 2016-04-21.
@@ -24,7 +28,7 @@ public class CreateWorkpass extends Thread {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private Workpass workpass1;
+    private Workpass workpass;
 
 
 
@@ -56,7 +60,8 @@ public class CreateWorkpass extends Thread {
             ex.printStackTrace();
         }
 
-        GregorianCalendar cal = new GregorianCalendar();
+        TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
+        GregorianCalendar cal = new GregorianCalendar(timeZone);
         cal.setTime(date);
 
         return cal;
@@ -72,59 +77,47 @@ public class CreateWorkpass extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            System.out.println(1);
-           workpass1 = (Workpass) ois.readObject();
+           workpass = (Workpass) ois.readObject();
 
-
-            System.out.println(1);
             try {
-               // for(Workpass workpass1  : workpasses ) {
-                    workpass1 = new Workpass();
-                    long workpassid = workpass1.getWorkpassID();
-                    int serverId;
-                    int userId = workpass1.getUserId();
-                    System.out.println(2);
-                    String title = workpass1.getTitle();
-                    long companyId = workpass1.getCompanyID();
-                    int companyServerid = workpass1.getCompanyServerID();
-                    System.out.println(3);
-                    String starttime = formatCalendarToString(workpass1.getStartDateTime());
-                    String endtime = formatCalendarToString(workpass1.getEndDateTime());
-                    double breaktime = workpass1.getBreaktime();
-                    double salary = workpass1.getSalary();
-                    System.out.println(4);
-                    String note = workpass1.getNote();
-                    double workinghours = workpass1.getWorkingHours();
-                    conn = DriverManager.getConnection(url, username, password);
-                    st = conn.createStatement();
-                    System.out.println(5);
-                    System.out.println(workpass1.toString());
-//                    if (companyServerid == -1) {
-//                        ResultSet rs = st.executeQuery("Select companyid FROM company where userid = " + userId + " and localcompanyid = '" + companyId + "';");
-//                        rs.first();
-//                        companyServerid = rs.getInt("companyid");
-//
-//                    }
 
-                    System.out.println(6);
-                    String query = "INSERT INTO workpass(title, salary, breaktime, notes, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyid) VALUES( '" +
-                            title + "', " + salary + ", " + breaktime + ", '" + note + "', " + workinghours + ", " + companyServerid + ", " + userId + ", '" + starttime + "', '" + endtime + "', " + workpassid + ", " + companyId + ");";
 
-                    st.executeUpdate(query);
-                    serverId = -1;
-                    System.out.println(1);
-                    ResultSet rs = null;
-                    rs = st.executeQuery("SELECT LAST_INSERT_ID()");
-                    if (rs.next()) {
-                        serverId = rs.getInt(1);
-                    }
+                long workpassid = workpass.getWorkpassID();
+                int serverId;
+                int userId = workpass.getUserId();
+                String title = workpass.getTitle();
+                long companyId = workpass.getCompanyID();
+                int companyServerid = workpass.getCompanyServerID();
+                TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
+                workpass.getEndDateTime().setTimeZone(timeZone);
+                workpass.getStartDateTime().setTimeZone(timeZone);
+                String starttime = formatCalendarToString(workpass.getStartDateTime());
+                String endtime = formatCalendarToString(workpass.getEndDateTime());
+                double breaktime = workpass.getBreaktime();
+                double salary = workpass.getSalary();
+                String note = workpass.getNote();
+                double workinghours = workpass.getWorkingHours();
+                conn = DriverManager.getConnection(url, username, password);
+                st = conn.createStatement();
+                if(companyServerid == -1){
+                    ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '"+userId+"' and localcompanyid = '"+ companyId+"';");
+                    rs.first();
+                    companyServerid = rs.getInt("companyid");
+                }
+                String query = "INSERT INTO workpass(title, salary, breaktime, notes, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyId) VALUES( '"+
+                        title+"','"+salary+"','"+breaktime+"','"+note+"','"+workinghours+"','"+companyServerid+"','"+userId+"','"+starttime+"','"+endtime+"','"+workpassid+"','"+companyId+"');";
 
-                    workpass1.setServerID(serverId);
-                    workpass1.setActionTag(null);
-                    workpass1.setIsSynced(1);
-              //  }
-                System.out.println(7);
-                oos.writeObject(workpass1);
+                st.executeUpdate(query);
+                serverId  = -1;
+                ResultSet rs = null;
+                rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+                if (rs.next()) {
+                    serverId = rs.getInt(1);
+                }
+
+                oos.writeObject(String.valueOf(serverId));
+                System.out.println("Skickad!");
+
 
 
 
