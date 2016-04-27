@@ -8,25 +8,6 @@ import java.util.GregorianCalendar;
  * Created by oladahl on 16-03-28.
  */
 public class Workpass implements Serializable{
-    @Override
-    public String toString() {
-        return "Workpass{" +
-                "workpassID=" + workpassID +
-                ", serverID=" + serverID +
-                ", userId=" + userId +
-                ", title='" + title + '\'' +
-                ", companyId=" + companyId +
-                ", companyServerID=" + companyServerID +
-                ", startDateTime=" + startDateTime.get(Calendar.DATE) +
-                ", endDateTime=" + endDateTime.get(Calendar.DATE) +
-                ", breaktime=" + breaktime +
-                ", salary=" + salary +
-                ", note='" + note + '\'' +
-                ", workingHours=" + workingHours +
-                ", isSynced=" + isSynced +
-                ", actionTag='" + actionTag + '\'' +
-                '}';
-    }
 
     private static final long serialVersionUID = 1L;
     private long workpassID;
