@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 /**
  * Created by Henrik on 2016-04-21.
@@ -21,7 +24,7 @@ public class CreateWorkpass extends Thread {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
-    private Workpass workpass;
+    private Workpass workpass1;
 
 
 
@@ -64,47 +67,64 @@ public class CreateWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej";
+        String password = "hejhej89";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            workpass = (Workpass)ois.readObject();
+            System.out.println(1);
+           workpass1 = (Workpass) ois.readObject();
+
+
+            System.out.println(1);
             try {
-                long workpassid = workpass.getWorkpassID();
-                int serverId;
-                int userId = workpass.getUserId();
-                String title = workpass.getTitle();
-                long companyId = workpass.getCompanyID();
-                int companyServerid = workpass.getCompanyServerID();
-                String starttime = formatCalendarToString(workpass.getStartDateTime());
-                String endtime = formatCalendarToString(workpass.getEndDateTime());
-                double breaktime = workpass.getBreaktime();
-                double salary = workpass.getSalary();
-                String note = workpass.getNote();
-                double workinghours = workpass.getWorkingHours();
-                conn = DriverManager.getConnection(url, username, password);
-                st = conn.createStatement();
-                if(companyServerid == -1){
-                    ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '"+userId+"' and localcomapnyid = '"+ companyId+"';");
-                    rs.first();
-                    companyServerid = rs.getInt("companyid");
-                }
-                String query = "INSERT INTO workpass(title, salary, breaktime, note, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyId) VALUES( '"+
-                        title+"','"+salary+"','"+breaktime+"','"+note+"','"+workinghours+"','"+companyServerid+"','"+userId+"','"+starttime+"','"+endtime+"','"+workpassid+"','"+companyId+"';";
+               // for(Workpass workpass1  : workpasses ) {
+                    workpass1 = new Workpass();
+                    long workpassid = workpass1.getWorkpassID();
+                    int serverId;
+                    int userId = workpass1.getUserId();
+                    System.out.println(2);
+                    String title = workpass1.getTitle();
+                    long companyId = workpass1.getCompanyID();
+                    int companyServerid = workpass1.getCompanyServerID();
+                    System.out.println(3);
+                    String starttime = formatCalendarToString(workpass1.getStartDateTime());
+                    String endtime = formatCalendarToString(workpass1.getEndDateTime());
+                    double breaktime = workpass1.getBreaktime();
+                    double salary = workpass1.getSalary();
+                    System.out.println(4);
+                    String note = workpass1.getNote();
+                    double workinghours = workpass1.getWorkingHours();
+                    conn = DriverManager.getConnection(url, username, password);
+                    st = conn.createStatement();
+                    System.out.println(5);
+                    System.out.println(workpass1.toString());
+//                    if (companyServerid == -1) {
+//                        ResultSet rs = st.executeQuery("Select companyid FROM company where userid = " + userId + " and localcompanyid = '" + companyId + "';");
+//                        rs.first();
+//                        companyServerid = rs.getInt("companyid");
+//
+//                    }
 
-                st.executeUpdate(query);
-                serverId  = -1;
-                ResultSet rs = null;
-                rs = st.executeQuery("SELECT LAST_INSERT_ID()");
-                if (rs.next()) {
-                    serverId = rs.getInt("workpassid");
-                }
+                    System.out.println(6);
+                    String query = "INSERT INTO workpass(title, salary, breaktime, notes, hours, companyid, userid, starttime, endtime, localworkpassid, localcompanyid) VALUES( '" +
+                            title + "', " + salary + ", " + breaktime + ", '" + note + "', " + workinghours + ", " + companyServerid + ", " + userId + ", '" + starttime + "', '" + endtime + "', " + workpassid + ", " + companyId + ");";
 
-                workpass.setServerID(serverId);
-                workpass.setActionTag(null);
-                workpass.setIsSynced(1);
-                oos.writeObject(workpass);
+                    st.executeUpdate(query);
+                    serverId = -1;
+                    System.out.println(1);
+                    ResultSet rs = null;
+                    rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+                    if (rs.next()) {
+                        serverId = rs.getInt(1);
+                    }
+
+                    workpass1.setServerID(serverId);
+                    workpass1.setActionTag(null);
+                    workpass1.setIsSynced(1);
+              //  }
+                System.out.println(7);
+                oos.writeObject(workpass1);
 
 
 
@@ -113,7 +133,7 @@ public class CreateWorkpass extends Thread {
 
 
             } catch (SQLException ex) {
-                oos.writeObject("Something went wrong");
+               // oos.writeObject("Something went wrong");
 
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
@@ -122,6 +142,10 @@ public class CreateWorkpass extends Thread {
 
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
+            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getSuppressed());
+            System.out.println(e.getCause());
+            System.out.println(e.fillInStackTrace());
         }
     }
 }
