@@ -75,7 +75,6 @@ public class Login extends Thread {
     }
     public void run() {
         System.out.println("tråden startar");
-        EncryptPassword encryptPassword = new EncryptPassword();
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
@@ -102,7 +101,6 @@ public class Login extends Thread {
                     User user = new User(firstname, lastname, email, userID);
                     oos.writeObject(user);
                     ArrayList<Company> list = new ArrayList<Company>();
-                  //  ArrayList<WorkpassModel> workpassList = new ArrayList<WorkpassModel>();
                     rs = st.executeQuery("SELECT companyid, companyname, hourlywage FROM company WHERE userid = " + userID + ";");
                     while (rs.next()) {
                         int serverid = rs.getInt("companyid");
