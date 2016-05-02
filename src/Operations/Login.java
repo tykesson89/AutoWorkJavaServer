@@ -37,7 +37,7 @@ public class Login extends Thread {
     private User user;
     private String url = "jdbc:mysql://localhost:3306/autowork";
     private String username = "root";
-    private String password = "hejhej89";
+    private String password = "g17sk44D";
     private Workpass workpass;
     List workpasses = new ArrayList<>();
     ArrayList<Workpass> workpasslist;
