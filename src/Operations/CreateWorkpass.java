@@ -74,7 +74,7 @@ public class CreateWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "g17sk44D";
+        String password = "hejhej89";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");

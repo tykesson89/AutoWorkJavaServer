@@ -18,7 +18,6 @@ import java.net.Socket;
 public class Server extends Thread {
     private ServerSocket serversocket;
     private Thread thread = new Thread(this);
-    private CreateUser createUser;
     public Server(int port) {
         try {
             serversocket = new ServerSocket(port);
