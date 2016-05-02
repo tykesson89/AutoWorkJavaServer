@@ -1,6 +1,8 @@
 package Operations;
 
 import UserPackage.Workpass;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 import java.io.IOException;
@@ -72,16 +74,19 @@ public class CreateWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
+        String password = "g17sk44D";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
+		Gson gson = new GsonBuilder().create();
         try {
             String looptimes = (String) ois.readObject();
             System.out.println(looptimes);
 
             for (int i = 0; i < Integer.parseInt(looptimes); i++) {
-                workpass = (Workpass) ois.readObject();
+                //workpass = (Workpass) ois.readObject();
+				String jObject = (String)ois.readObject();
+				workpass = gson.fromJson(jObject, Workpass.class);
                 System.out.println(workpass.getActionTag());
                 if(workpass.getActionTag().equals("Change Workpass")){
                     new ChangeWorkpass(socket, oos, ois, workpass);
@@ -106,7 +111,7 @@ public class CreateWorkpass extends Thread {
                         double workinghours = workpass.getWorkingHours();
                         conn = DriverManager.getConnection(url, username, password);
                         st = conn.createStatement();
-                        if (companyServerid == -1) {
+                        if (companyServerid == 0) {
                             ResultSet rs = st.executeQuery("Select companyid FROM company where userid = '" + userId + "' and localcompanyid = '" + companyId + "';");
                             rs.first();
                             companyServerid = rs.getInt("companyid");
@@ -116,14 +121,23 @@ public class CreateWorkpass extends Thread {
 
                         st.executeUpdate(query);
                         serverId = -1;
+						String name = null;
                         ResultSet rs = null;
-                        rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+                        //rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+						rs = st.executeQuery("select * from workpass where workpassId = (select LAST_INSERT_ID())");
                         if (rs.next()) {
-                            serverId = rs.getInt(1);
+							workpass.setServerID(rs.getInt("workpassId"));
+							workpass.setCompanyServerID(companyServerid);
+							workpass.setIsSynced(1);
+							workpass.setActionTag("Synced");
+
+                            //serverId = rs.getInt("workpassId");
+							//name = rs.getString("title");
                         }
 
-                        oos.writeObject(String.valueOf(serverId));
-                        System.out.println("Skickad!");
+
+						oos.writeObject(gson.toJson(workpass));
+                        //System.out.println("Skickad!");
                     } catch (SQLException ex) {
                         // oos.writeObject("Something went wrong");
 
@@ -136,6 +150,7 @@ public class CreateWorkpass extends Thread {
 
 
         } catch (Exception e) {
+			e.printStackTrace();
             System.out.println(e.getStackTrace());
             System.out.println(e.getLocalizedMessage());
             System.out.println(e.getSuppressed());

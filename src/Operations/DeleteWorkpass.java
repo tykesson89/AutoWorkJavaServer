@@ -33,7 +33,7 @@ public class DeleteWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
+        String password = "g17sk44D";
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
