@@ -22,11 +22,12 @@ public class ChangeCompanyInfo extends Thread {
     private Company company;
 
 
-    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois, Company company)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
         this.oos = oos;
+        this.company = company;
         start();
 
 
@@ -41,7 +42,7 @@ public class ChangeCompanyInfo extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            company = (Company) ois.readObject();
+
             try {
                 String companyName = company.getCompanyName();
                 double hourlyWage = company.getHourlyWage();
@@ -56,7 +57,7 @@ public class ChangeCompanyInfo extends Thread {
                 company.setActionTag(null);
                 company.setIsSynced(1);
 
-                oos.writeObject(company);
+                oos.writeObject(1);
 
 
             } catch (SQLException ex) {

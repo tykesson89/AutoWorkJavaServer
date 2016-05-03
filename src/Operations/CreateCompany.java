@@ -40,41 +40,47 @@ public class CreateCompany extends Thread {
         System.out.println("tråden startar");
 		Gson gson = new GsonBuilder().create();
         try {
-            //company = (Company)ois.readObject();
+
 			String looptimes = (String) ois.readObject();
+
 
 			for(int i = 0; i < Integer.parseInt(looptimes); i++){
 
 				String jObject = (String)ois.readObject();
 				company = gson.fromJson(jObject, Company.class);
-				try{
-					double houelywage = company.getHourlyWage();
-					String companyName = company.getCompanyName();
-					int userId = company.getUserId();
-					long localId = company.getCompanyId();
-					conn = DriverManager.getConnection(url, username, password);
+				if(company.getActionTag().equals("Change Company")){
+					new ChangeCompanyInfo(socket, oos, ois, company);
+				}else if(company.getActionTag().equals("Delete Company")){
+					new DeleteCompany(socket, oos, ois, company);
+				}else {
+					try {
+						double houelywage = company.getHourlyWage();
+						String companyName = company.getCompanyName();
+						int userId = company.getUserId();
+						long localId = company.getCompanyId();
+						conn = DriverManager.getConnection(url, username, password);
 
-					tt = conn.createStatement();
-					tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage, localcompanyid) VALUES('" + userId + "','" + companyName + "','" + houelywage + "','" + localId + "' );");
-					int companyId = -1;
-					ResultSet co = null;
-					co = tt.executeQuery("SELECT LAST_INSERT_ID()");
-					if(co.next()){
-						companyId = co.getInt(1);
+						tt = conn.createStatement();
+						tt.executeUpdate("INSERT INTO company(userid, companyname, hourlywage, localcompanyid) VALUES('" + userId + "','" + companyName + "','" + houelywage + "','" + localId + "' );");
+						int companyId = -1;
+						ResultSet co = null;
+						co = tt.executeQuery("SELECT LAST_INSERT_ID()");
+						if (co.next()) {
+							companyId = co.getInt(1);
                     /*company.setServerID(companyId);
                     company.setIsSynced(1);
                     company.setActionTag(null);*/
+						}
+
+						oos.writeObject(String.valueOf(companyId));
+
+
+					} catch (SQLException ex) {
+						oos.writeObject("Something went wrong");
+						System.out.println("SQLException: " + ex.getMessage());
+						System.out.println("SQLState: " + ex.getSQLState());
+						System.out.println("VendorError: " + ex.getErrorCode());
 					}
-
-					oos.writeObject(String.valueOf(companyId));
-
-					conn.close();
-
-				} catch(SQLException ex){
-					oos.writeObject("Something went wrong");
-					System.out.println("SQLException: " + ex.getMessage());
-					System.out.println("SQLState: " + ex.getSQLState());
-					System.out.println("VendorError: " + ex.getErrorCode());
 				}
 			}
 

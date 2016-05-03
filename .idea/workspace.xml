@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc8e82d-f56d-4923-a538-09b5ee6b4e9e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeCompanyInfo.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeCompanyInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeWorkpass.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/ChangeWorkpass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateCompany.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateCompany.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateWorkpass.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/CreateWorkpass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteCompany.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteCompany.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteWorkpass.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/DeleteWorkpass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/SendMail.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Operations/SendMail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" afterPath="$PROJECT_DIR$/out/production/AutoWorkJavaServer/Server/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" afterPath="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" afterPath="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateCompany.java" afterPath="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" afterPath="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/DeleteWorkpass.java" afterPath="$PROJECT_DIR$/src/Operations/DeleteWorkpass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/Login.java" afterPath="$PROJECT_DIR$/src/Operations/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Operations/DeleteCompany.java" afterPath="$PROJECT_DIR$/src/Operations/DeleteCompany.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Server/Server.java" />
     </list>
     <ignored path="AutoWorkJavaServer.iws" />
@@ -34,12 +39,22 @@
     <favorites_list name="AutoWorkJavaServer" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="CreateCompany.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/CreateCompany.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+              <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeCompanyInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -55,11 +70,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37467363">
+              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CreateWorkpass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/CreateWorkpass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -69,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/Operations/DeleteCompany.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+              <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -99,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+              <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,31 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendMail.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SendMail.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operations/SendMail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.858804">
+            <state vertical-scroll-proportion="0.0">
               <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangeUserInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Operations/ChangeUserInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangeWorkpass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Operations/ChangeWorkpass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -189,19 +194,19 @@
         <option value="$PROJECT_DIR$/src/UserPackage/User.java" />
         <option value="$PROJECT_DIR$/src/Operations/SendMail.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/Company.java" />
-        <option value="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" />
-        <option value="$PROJECT_DIR$/src/Operations/DeleteCompany.java" />
         <option value="$PROJECT_DIR$/src/Operations/EncryptPassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateUser.java" />
         <option value="$PROJECT_DIR$/src/Operations/GetNewPassword.java" />
         <option value="$PROJECT_DIR$/src/Operations/ChangePassword.java" />
         <option value="$PROJECT_DIR$/src/UserPackage/Workpass.java" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Operations/ChangeWorkpass.java" />
-        <option value="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
         <option value="$PROJECT_DIR$/src/Operations/CreateWorkpass.java" />
         <option value="$PROJECT_DIR$/src/Operations/DeleteWorkpass.java" />
         <option value="$PROJECT_DIR$/src/Operations/Login.java" />
+        <option value="$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java" />
+        <option value="$PROJECT_DIR$/src/Operations/DeleteCompany.java" />
+        <option value="$PROJECT_DIR$/src/Operations/CreateCompany.java" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
       </list>
     </option>
   </component>
@@ -216,10 +221,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1692" />
-    <option name="height" value="1026" />
+    <option name="x" value="-10" />
+    <option name="width" value="1934" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -246,7 +250,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,8 +327,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -873,31 +877,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1692" height="1026" extended-state="0" />
-    <editor active="true" />
+    <frame x="-10" y="0" width="1934" height="1030" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32793018" sideWeight="0.48808235" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.72384036" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13434453" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29451287" sideWeight="0.51191765" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3560049" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35590467" sideWeight="0.49360147" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793959" sideWeight="0.50639856" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32793018" sideWeight="0.48808235" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13434453" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29301745" sideWeight="0.51191765" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33370662" sideWeight="0.49266502" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -927,7 +931,8 @@
     <MESSAGE value="Börjat fixa Workpass" />
     <MESSAGE value="Kryptering av lösenord" />
     <MESSAGE value="Commit efter massa fel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit efter massa fel" />
+    <MESSAGE value="Ändrat company för synkning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ändrat company för synkning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1236,22 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/ChangePassword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1276,14 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/CreateCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/CreateUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1295,15 +1276,7 @@
     <entry file="file://$PROJECT_DIR$/src/Operations/CreateWorkpass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operations/DeleteCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1327,7 +1300,7 @@
     <entry file="file://$PROJECT_DIR$/src/Operations/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1336,8 +1309,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Operations/SendMail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.858804">
+        <state vertical-scroll-proportion="0.0">
           <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/ChangeCompanyInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/DeleteCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Operations/CreateCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37467363">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
           <folding />
         </state>
       </provider>
