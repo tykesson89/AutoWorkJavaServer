@@ -22,11 +22,12 @@ public class DeleteCompany extends Thread {
     private Company company;
 
 
-    public DeleteCompany(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
+    public DeleteCompany(Socket socket, ObjectOutputStream oos, ObjectInputStream ois, Company company)
             throws IOException {
         this.socket = socket;
         this.ois = ois;
         this.oos = oos;
+        this.company = company;
         start();
 
 
@@ -41,7 +42,7 @@ public class DeleteCompany extends Thread {
         Statement tt = null;
         System.out.println("tråden startar");
         try {
-            company = (Company) ois.readObject();
+
             try {
                 int companyId = company.getServerID();
 
@@ -53,7 +54,7 @@ public class DeleteCompany extends Thread {
 
 
 
-                oos.writeObject("Company deleted");
+                oos.writeObject(1);
 
 
             } catch (SQLException ex) {
