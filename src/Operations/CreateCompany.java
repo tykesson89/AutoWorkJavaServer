@@ -83,7 +83,7 @@ public class CreateCompany extends Thread {
                     company.setActionTag(null);*/
 						}
 
-						oos.writeObject(String.valueOf(companyId));
+						oos.writeObject(companyId);
 
 
 					} catch (SQLException ex) {

@@ -54,11 +54,11 @@ public class ChangeCompanyInfo extends Thread {
                 st.executeUpdate("update company set companyname = '" + companyName + "', hourlywage = '" + hourlyWage + "' where companyid = " + companyId + ";");
 
 
-                company.setActionTag(null);
-                company.setIsSynced(1);
-
-                oos.writeObject(1);
-
+               // company.setActionTag(null);
+                //company.setIsSynced(1);
+System.out.println(companyId);
+              //  oos.writeObject("SYNCAD");
+                System.out.println(2);
 
             } catch (SQLException ex) {
                 oos.writeObject("Something went wrong");
