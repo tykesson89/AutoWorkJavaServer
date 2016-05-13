@@ -44,26 +44,27 @@ public class CreateWorkpass extends Thread {
     }
 
     private String formatCalendarToString(GregorianCalendar cal) {
-        SimpleDateFormat fmt = new SimpleDateFormat("yyyy MM dd HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd HH:mm");
+        format.setTimeZone(TimeZone.getDefault());
 
-        String dateFormatted = fmt.format(cal.getTime());
+        String dateFormatted = format.format(cal.getTime());
 
         return dateFormatted;
     }
 
     private GregorianCalendar formatStringToCalendar(String str) {
-        SimpleDateFormat fmt = new SimpleDateFormat("yyyy MM dd HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd HH:mm");
 
         Date date = null;
         try {
-            date = fmt.parse(str);
+            date = format.parse(str);
 
         } catch (ParseException ex) {
             ex.printStackTrace();
         }
 
-        TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
-        GregorianCalendar cal = new GregorianCalendar(timeZone);
+
+        GregorianCalendar cal = new GregorianCalendar(TimeZone.getDefault());
         cal.setTime(date);
 
         return cal;
@@ -100,9 +101,6 @@ public class CreateWorkpass extends Thread {
                         String title = workpass.getTitle();
                         long companyId = workpass.getCompanyID();
                         int companyServerid = workpass.getCompanyServerID();
-                        TimeZone timeZone = TimeZone.getTimeZone("GMT+1");
-                        workpass.getEndDateTime().setTimeZone(timeZone);
-                        workpass.getStartDateTime().setTimeZone(timeZone);
                         String starttime = formatCalendarToString(workpass.getStartDateTime());
                         String endtime = formatCalendarToString(workpass.getEndDateTime());
                         double breaktime = workpass.getBreaktime();
@@ -123,17 +121,17 @@ public class CreateWorkpass extends Thread {
                         serverId = -1;
 						String name = null;
                         ResultSet rs = null;
-                        //rs = st.executeQuery("SELECT LAST_INSERT_ID()");
-						rs = st.executeQuery("select * from workpass where workpassId = (select LAST_INSERT_ID())");
-                        if (rs.next()) {
-							workpass.setServerID(rs.getInt("workpassId"));
+                        rs = st.executeQuery("SELECT LAST_INSERT_ID()");
+                        rs.first();
+
+                            workpass.setServerID(rs.getInt(1));
 							workpass.setCompanyServerID(companyServerid);
 							workpass.setIsSynced(1);
 							workpass.setActionTag("Synced");
 
                             //serverId = rs.getInt("workpassId");
 							//name = rs.getString("title");
-                        }
+
 
 
 						oos.writeObject(gson.toJson(workpass));
