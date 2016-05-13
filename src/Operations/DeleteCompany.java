@@ -16,16 +16,14 @@ import java.sql.Statement;
  */
 public class DeleteCompany extends Thread {
     private Socket socket;
-    private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
     private Company company;
 
 
-    public DeleteCompany(Socket socket, ObjectOutputStream oos, ObjectInputStream ois, Company company)
+    public DeleteCompany(Socket socket, ObjectOutputStream oos, Company company)
             throws IOException {
         this.socket = socket;
-        this.ois = ois;
         this.oos = oos;
         this.company = company;
         start();
@@ -48,17 +46,17 @@ public class DeleteCompany extends Thread {
 
                 conn = DriverManager.getConnection(url, username, password);
                 st = conn.createStatement();
+                System.out.println(companyId);
+               st.executeUpdate("DELETE FROM company where companyid = " + companyId + ";");
 
-               st.executeQuery("DELETE FROM company where companyid = '" + companyId + "';");
+                System.out.println(1);
 
 
-
-
-                oos.writeObject(1);
+                oos.writeObject(companyId);
 
 
             } catch (SQLException ex) {
-                oos.writeObject("Something went wrong");
+               // oos.writeObject("Something went wrong");
 
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
@@ -66,6 +64,10 @@ public class DeleteCompany extends Thread {
             }
 
         } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+            e.printStackTrace();
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getStackTrace());
             System.out.println(e.getStackTrace());
         }
     }

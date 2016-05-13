@@ -52,11 +52,11 @@ public class CreateCompany extends Thread {
 				System.out.println(company.getActionTag());
 				if(company.getActionTag().equals("Change Company")){
 					System.out.println(24);
-					new ChangeCompanyInfo(socket, oos, ois, company);
+					new ChangeCompanyInfo(socket, oos, company);
 					System.out.println(25);
 				}else if(company.getActionTag().equals("Delete Company")){
 					System.out.println(26);
-					new DeleteCompany(socket, oos, ois, company);
+					new DeleteCompany(socket, oos, company);
 					System.out.println(27);
 				}else {
 					try {
@@ -95,9 +95,7 @@ public class CreateCompany extends Thread {
 				}
 			}
 
-			ois.close();
-			oos.close();
-			socket.close();
+
 
         } catch (Exception e) {
             System.out.println(e.getStackTrace());

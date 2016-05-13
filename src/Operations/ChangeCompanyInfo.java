@@ -16,16 +16,15 @@ import java.sql.Statement;
  */
 public class ChangeCompanyInfo extends Thread {
     private Socket socket;
-    private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
     private Company company;
 
 
-    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, ObjectInputStream ois, Company company)
+    public ChangeCompanyInfo(Socket socket, ObjectOutputStream oos, Company company)
             throws IOException {
         this.socket = socket;
-        this.ois = ois;
+
         this.oos = oos;
         this.company = company;
         start();
@@ -54,11 +53,7 @@ public class ChangeCompanyInfo extends Thread {
                 st.executeUpdate("update company set companyname = '" + companyName + "', hourlywage = '" + hourlyWage + "' where companyid = " + companyId + ";");
 
 
-               // company.setActionTag(null);
-                //company.setIsSynced(1);
-System.out.println(companyId);
-              //  oos.writeObject("SYNCAD");
-                System.out.println(2);
+                oos.writeObject(companyId);
 
             } catch (SQLException ex) {
                 oos.writeObject("Something went wrong");
@@ -69,7 +64,7 @@ System.out.println(companyId);
             }
 
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            e.printStackTrace();
         }
     }
 
