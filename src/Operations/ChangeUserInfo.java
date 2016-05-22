@@ -2,6 +2,7 @@ package Operations;
 
 import Server.Server;
 import UserPackage.User;
+import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,6 +19,9 @@ public class ChangeUserInfo extends Thread {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Connection conn;
+	private String url = "jdbc:mysql://localhost:3306/autowork";
+	private String username = "root";
+	String password = Server.DATABASE_PASSWORD;
     private User user;
 
 
@@ -33,9 +37,6 @@ public class ChangeUserInfo extends Thread {
 
     public void run() {
         System.out.println("tråden startar");
-        String url = "jdbc:mysql://localhost:3306/autowork";
-        String username = "root";
-		String password = Server.DATABASE_PASSWORD;
         Statement st = null;
         System.out.println("tråden startar");
         try {
@@ -53,7 +54,7 @@ public class ChangeUserInfo extends Thread {
                 String pass = rs.getString("password");
                 System.out.println(pass);
                 System.out.println(oldPassword);
-                if(!pass.equals(oldPassword)){
+                if(!checkPassword(email, oldPassword)){
                     oos.writeObject("Password is incorrect");
 
                 }else {
@@ -76,6 +77,31 @@ public class ChangeUserInfo extends Thread {
         }
     }
 
+	public boolean checkPassword(String email, String oldPassword){
+		try {
+			EncryptPassword encryptPassword = new EncryptPassword();
+			Statement st = null;
+			conn = DriverManager.getConnection(url, username, password);
+			st = conn.createStatement();
+			ResultSet rs = st.executeQuery("SELECT password FROM users WHERE email = '" + email + "';");
+			rs.first();
+			try {
+				String testPass = encryptPassword.decryptPassword(rs.getString("password"));
+
+				if(testPass.equals(oldPassword)){
+					return true;
+				}else{
+					return false;
+				}
+			}catch(EncryptionOperationNotPossibleException e){
+				return false;
+			}
+
+		}catch(SQLException w){
+			return false;
+		}
+
+	}
 
 }
 

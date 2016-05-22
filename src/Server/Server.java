@@ -17,7 +17,7 @@ import java.net.Socket;
  * Created by Henrik on 2016-03-15.
  */
 public class Server extends Thread {
-	public static String DATABASE_PASSWORD = "g17sk44d";
+	public static String DATABASE_PASSWORD = "g17sk44D";
     private ServerSocket serversocket;
     private Thread thread = new Thread(this);
     public Server(int port) {
