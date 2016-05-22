@@ -1,5 +1,6 @@
 package Operations;
 
+import Server.Server;
 import UserPackage.Company;
 import UserPackage.User;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class CreateUser extends Thread {
     private Company company;
     private String url = "jdbc:mysql://localhost:3306/autowork";
    private  String username = "root";
-    private String password = "hejhej89";
+	String password = Server.DATABASE_PASSWORD;
     public CreateUser(Socket socket, ObjectOutputStream oos, ObjectInputStream ois)
             throws IOException {
         this.socket = socket;

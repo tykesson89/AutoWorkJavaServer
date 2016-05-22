@@ -1,5 +1,6 @@
 package Operations;
 
+import Server.Server;
 import UserPackage.Company;
 
 import java.io.IOException;
@@ -36,8 +37,8 @@ public class ChangeCompanyInfo extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
-        Statement st = null;
+        String password = Server.DATABASE_PASSWORD;
+		Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");
         try {

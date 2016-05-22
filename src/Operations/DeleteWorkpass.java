@@ -1,5 +1,6 @@
 package Operations;
 
+import Server.Server;
 import UserPackage.Workpass;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class DeleteWorkpass extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
+		String password = Server.DATABASE_PASSWORD;
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");

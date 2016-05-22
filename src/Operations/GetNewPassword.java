@@ -1,5 +1,7 @@
 package Operations;
 
+import Server.Server;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -34,7 +36,7 @@ public class GetNewPassword extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
+		String password = Server.DATABASE_PASSWORD;
         Statement st = null;
         try {
             String email = (String) ois.readObject();

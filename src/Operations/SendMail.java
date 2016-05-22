@@ -1,5 +1,7 @@
 package Operations;
 
+import Server.Server;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -12,7 +14,8 @@ public class SendMail {
 
 
     final String senderEmailID = "noreplyautowork@gmail.com";
-    final String senderPassword = "hejhej89";
+    //final String senderPassword = "hejhej89";
+	final String senderPassword = Server.DATABASE_PASSWORD;
     final String emailSMTPserver = "smtp.gmail.com";
     final String emailServerPort = "465";
     String receiverEmailID = null;

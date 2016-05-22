@@ -1,5 +1,6 @@
 package Operations;
 
+import Server.Server;
 import UserPackage.Company;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,7 +35,7 @@ public class CreateCompany extends Thread {
         System.out.println("tråden startar");
         String url = "jdbc:mysql://localhost:3306/autowork";
         String username = "root";
-        String password = "hejhej89";
+		String password = Server.DATABASE_PASSWORD;
         Statement st = null;
         Statement tt = null;
         System.out.println("tråden startar");

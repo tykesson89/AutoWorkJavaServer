@@ -17,6 +17,7 @@ import java.net.Socket;
  * Created by Henrik on 2016-03-15.
  */
 public class Server extends Thread {
+	public static String DATABASE_PASSWORD = "g17sk44d";
     private ServerSocket serversocket;
     private Thread thread = new Thread(this);
     public Server(int port) {
@@ -25,7 +26,6 @@ public class Server extends Thread {
             thread.start();
         } catch (IOException o) {
         }
-
     }
 
     public void run() {
